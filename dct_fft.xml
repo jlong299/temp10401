@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy
+ date="2016.10.20.17:36:01"
+ outputDirectory="C:/work/pj104/code/1610/sim/dct/dct_fft/">
+ <perimeter>
+  <parameter
+     name="AUTO_GENERATION_ID"
+     type="Integer"
+     defaultValue="0"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_UNIQUE_ID"
+     type="String"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_FAMILY"
+     type="String"
+     defaultValue="Arria 10"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE"
+     type="String"
+     defaultValue="10AS016C3U19E2LG"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_SPEEDGRADE"
+     type="String"
+     defaultValue="2"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK_CLOCK_RATE"
+     type="Long"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK_CLOCK_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK_RESET_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <interface name="clk" kind="clock" start="0">
+   <property name="clockRate" value="0" />
+   <property name="externallyDriven" value="false" />
+   <property name="ptfSchematicName" value="" />
+   <port name="clk" direction="input" role="clk" width="1" />
+  </interface>
+  <interface name="rst" kind="reset" start="0">
+   <property name="associatedClock" value="clk" />
+   <property name="synchronousEdges" value="DEASSERT" />
+   <port name="reset_n" direction="input" role="reset_n" width="1" />
+  </interface>
+  <interface name="sink" kind="conduit" start="0">
+   <property name="associatedClock" value="clk" />
+   <property name="associatedReset" value="rst" />
+   <port name="sink_valid" direction="input" role="sink_valid" width="1" />
+   <port name="sink_ready" direction="output" role="sink_ready" width="1" />
+   <port name="sink_error" direction="input" role="sink_error" width="2" />
+   <port name="sink_sop" direction="input" role="sink_sop" width="1" />
+   <port name="sink_eop" direction="input" role="sink_eop" width="1" />
+   <port name="sink_real" direction="input" role="sink_real" width="16" />
+   <port name="sink_imag" direction="input" role="sink_imag" width="16" />
+   <port name="fftpts_in" direction="input" role="fftpts_in" width="12" />
+   <port name="inverse" direction="input" role="inverse" width="1" />
+  </interface>
+  <interface name="source" kind="conduit" start="0">
+   <property name="associatedClock" value="clk" />
+   <property name="associatedReset" value="rst" />
+   <port name="source_valid" direction="output" role="source_valid" width="1" />
+   <port name="source_ready" direction="input" role="source_ready" width="1" />
+   <port name="source_error" direction="output" role="source_error" width="2" />
+   <port name="source_sop" direction="output" role="source_sop" width="1" />
+   <port name="source_eop" direction="output" role="source_eop" width="1" />
+   <port name="source_real" direction="output" role="source_real" width="28" />
+   <port name="source_imag" direction="output" role="source_imag" width="28" />
+   <port name="fftpts_out" direction="output" role="fftpts_out" width="12" />
+  </interface>
+ </perimeter>
+ <entity kind="dct_fft" version="1.0" name="dct_fft">
+  <parameter name="AUTO_CLK_CLOCK_RATE" value="-1" />
+  <parameter name="AUTO_GENERATION_ID" value="1476956161" />
+  <parameter name="AUTO_DEVICE" value="10AS016C3U19E2LG" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Arria 10" />
+  <parameter name="AUTO_CLK_RESET_DOMAIN" value="-1" />
+  <parameter name="AUTO_CLK_CLOCK_DOMAIN" value="-1" />
+  <parameter name="AUTO_UNIQUE_ID" value="" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="2" />
+  <generatedFiles>
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\synth\dct_fft.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\synth\dct_fft_cfg.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\synth\dct_fft.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\synth\dct_fft_cfg.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file path="C:/work/pj104/code/1610/sim/dct/dct_fft.qsys" />
+  </sourceFiles>
+  <childSourceFiles>
+   <file
+       path="C:/altera/15.1/ip/altera/dsp/altera_fft_ii/altera_fft_ii_hw.tcl" />
+   <file path="C:/altera/15.1/ip/altera/dsp/altera_fft_ii/fft_helper.jar" />
+   <file
+       path="C:/altera/15.1/quartus/sopc_builder/model/lib/com.altera.entityinterfaces.jar" />
+  </childSourceFiles>
+  <messages>
+   <message level="Info" culprit="dct_fft">"Generating: dct_fft"</message>
+   <message level="Info" culprit="dct_fft">"Generating: dct_fft_altera_fft_ii_151_lnky34i"</message>
+  </messages>
+ </entity>
+ <entity
+   kind="altera_fft_ii"
+   version="15.1"
+   name="dct_fft_altera_fft_ii_151_lnky34i">
+  <parameter name="THROUGHPUT_LATENCY" value="4096" />
+  <parameter name="in_width_derived" value="16" />
+  <parameter name="in_order" value="Natural" />
+  <parameter name="num_engines_derived" value="1" />
+  <parameter name="twid_width_derived" value="16" />
+  <parameter name="length" value="2048" />
+  <parameter name="out_order" value="Natural" />
+  <parameter name="selected_device_family" value="Arria 10" />
+  <parameter name="dsp_resource_opt" value="false" />
+  <parameter name="CALC_LATENCY" value="2048" />
+  <parameter name="design_env" value="NATIVE" />
+  <parameter name="data_rep" value="Fixed Point" />
+  <parameter name="in_width" value="16" />
+  <parameter name="engine_arch" value="Quad Output" />
+  <parameter name="data_flow" value="Variable Streaming" />
+  <parameter name="out_width" value="28" />
+  <parameter name="num_engines" value="1" />
+  <parameter name="out_width_derived" value="28" />
+  <parameter name="hard_fp" value="false" />
+  <parameter name="twid_width" value="16" />
+  <parameter name="direction" value="Bi-directional" />
+  <generatedFiles>
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\dct_fft_altera_fft_ii_151_lnky34i_opt_twr2.hex"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\dct_fft_altera_fft_ii_151_lnky34i_opt_twi3.hex"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\dct_fft_altera_fft_ii_151_lnky34i_opt_twr3.hex"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\dct_fft_altera_fft_ii_151_lnky34i_opt_twi4.hex"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\dct_fft_altera_fft_ii_151_lnky34i_opt_twi1.hex"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\dct_fft_altera_fft_ii_151_lnky34i_opt_twr4.hex"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\dct_fft_altera_fft_ii_151_lnky34i_opt_twi5.hex"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\dct_fft_altera_fft_ii_151_lnky34i_opt_twr1.hex"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\dct_fft_altera_fft_ii_151_lnky34i_opt_twr5.hex"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\dct_fft_altera_fft_ii_151_lnky34i_opt_twi2.hex"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_text_pkg.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_math_pkg.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_lib_pkg.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_avalon_streaming_block_sink.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_avalon_streaming_block_source.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_roundsat.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_fpcompiler_alufp.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_fpcompiler_aslf.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_fpcompiler_asrf.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_fpcompiler_castftox.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_fpcompiler_castxtof.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_fpcompiler_clzf.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_fpcompiler_mulfp.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\apn_fft_mult_can.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\apn_fft_mult_cpx_1825.v"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\apn_fft_mult_cpx.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_r22sdf_top.ocp"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\altera_fft_dual_port_ram.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\altera_fft_dual_port_rom.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\altera_fft_mult_add.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\altera_fft_single_port_rom.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_fft_pkg.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_r22sdf_lib_pkg.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_bit_reverse_addr_control.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_bit_reverse_core.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_bit_reverse_reverse_carry_adder.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_r22sdf_adder_fp.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_r22sdf_addsub.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_r22sdf_bfi.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_r22sdf_bfii.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_r22sdf_bf_control.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_r22sdf_cma.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_r22sdf_cma_adder_fp.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_r22sdf_cma_bfi_fp.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_r22sdf_core.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_r22sdf_counter.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_r22sdf_delay.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_r22sdf_enable_control.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_r22sdf_stage.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_r22sdf_stg_out_pipe.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_r22sdf_stg_pipe.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_r22sdf_top.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_r22sdf_twrom.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\dct_fft_altera_fft_ii_151_lnky34i.sv"
+       attributes="" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\dct_fft_altera_fft_ii_151_lnky34i_opt_twr2.hex"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\dct_fft_altera_fft_ii_151_lnky34i_opt_twi3.hex"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\dct_fft_altera_fft_ii_151_lnky34i_opt_twr3.hex"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\dct_fft_altera_fft_ii_151_lnky34i_opt_twi4.hex"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\dct_fft_altera_fft_ii_151_lnky34i_opt_twi1.hex"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\dct_fft_altera_fft_ii_151_lnky34i_opt_twr4.hex"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\dct_fft_altera_fft_ii_151_lnky34i_opt_twi5.hex"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\dct_fft_altera_fft_ii_151_lnky34i_opt_twr1.hex"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\dct_fft_altera_fft_ii_151_lnky34i_opt_twr5.hex"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\dct_fft_altera_fft_ii_151_lnky34i_opt_twi2.hex"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_text_pkg.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_math_pkg.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_lib_pkg.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_avalon_streaming_block_sink.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_avalon_streaming_block_source.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_roundsat.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_fpcompiler_alufp.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_fpcompiler_aslf.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_fpcompiler_asrf.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_fpcompiler_castftox.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_fpcompiler_castxtof.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_fpcompiler_clzf.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_fpcompiler_mulfp.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\apn_fft_mult_can.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\apn_fft_mult_cpx_1825.v"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\apn_fft_mult_cpx.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_r22sdf_top.ocp"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\altera_fft_dual_port_ram.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\altera_fft_dual_port_rom.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\altera_fft_mult_add.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\altera_fft_single_port_rom.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_fft_pkg.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_r22sdf_lib_pkg.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_bit_reverse_addr_control.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_bit_reverse_core.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_bit_reverse_reverse_carry_adder.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_r22sdf_adder_fp.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_r22sdf_addsub.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_r22sdf_bfi.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_r22sdf_bfii.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_r22sdf_bf_control.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_r22sdf_cma.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_r22sdf_cma_adder_fp.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_r22sdf_cma_bfi_fp.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_r22sdf_core.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_r22sdf_counter.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_r22sdf_delay.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_r22sdf_enable_control.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_r22sdf_stage.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_r22sdf_stg_out_pipe.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_r22sdf_stg_pipe.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_r22sdf_top.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\auk_dspip_r22sdf_twrom.vhd"
+       attributes="" />
+   <file
+       path="C:\work\pj104\code\1610\sim\dct\dct_fft\altera_fft_ii_151\synth\dct_fft_altera_fft_ii_151_lnky34i.sv"
+       attributes="" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="C:/altera/15.1/ip/altera/dsp/altera_fft_ii/altera_fft_ii_hw.tcl" />
+   <file path="C:/altera/15.1/ip/altera/dsp/altera_fft_ii/fft_helper.jar" />
+   <file
+       path="C:/altera/15.1/quartus/sopc_builder/model/lib/com.altera.entityinterfaces.jar" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator instantiator="dct_fft" as="fft_ii_0" />
+  <messages>
+   <message level="Info" culprit="dct_fft">"Generating: dct_fft_altera_fft_ii_151_lnky34i"</message>
+  </messages>
+ </entity>
+</deploy>

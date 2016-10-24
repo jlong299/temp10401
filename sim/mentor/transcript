@@ -1,0 +1,146 @@
+ls
+# dct_fft_altera_fft_ii_151_lnky34i_opt_twi1.hex  dct_fft_altera_fft_ii_151_lnky34i_opt_twr2.ver  fft_src.dat           
+# dct_fft_altera_fft_ii_151_lnky34i_opt_twi2.hex  dct_fft_altera_fft_ii_151_lnky34i_opt_twr3.hex  mentor.do             
+# dct_fft_altera_fft_ii_151_lnky34i_opt_twi3.hex  dct_fft_altera_fft_ii_151_lnky34i_opt_twr3.ver  modelsim.ini          
+# dct_fft_altera_fft_ii_151_lnky34i_opt_twi4.hex  dct_fft_altera_fft_ii_151_lnky34i_opt_twr4.hex  msim_setup.tcl        
+# dct_fft_altera_fft_ii_151_lnky34i_opt_twi5.hex  dct_fft_altera_fft_ii_151_lnky34i_opt_twr4.ver  transcript            
+# dct_fft_altera_fft_ii_151_lnky34i_opt_twr1.hex  dct_fft_altera_fft_ii_151_lnky34i_opt_twr5.hex  vish_stacktrace.vstf  
+# dct_fft_altera_fft_ii_151_lnky34i_opt_twr1.ver  dct_fft_altera_fft_ii_151_lnky34i_opt_twr5.ver  vsim.wlf              
+# dct_fft_altera_fft_ii_151_lnky34i_opt_twr2.hex  fft_result.dat                                                        
+# 
+# libraries:
+# _info  dct_fft_altera_fft_ii_151  work                                                
+source mentor.do
+# [exec] file_copy
+# List Of Command Line Aliases
+# 
+# file_copy                     -- Copy ROM/RAM files to simulation directory
+# 
+# dev_com                       -- Compile device library files
+# 
+# com                           -- Compile the design files in correct order
+# 
+# elab                          -- Elaborate top level design
+# 
+# elab_debug                    -- Elaborate the top level design with novopt option
+# 
+# ld                            -- Compile all the design files and elaborate the top level design
+# 
+# ld_debug                      -- Compile all the design files and elaborate the top level design with -novopt
+# 
+# 
+# 
+# List Of Variables
+# 
+# TOP_LEVEL_NAME                -- Top level module name.
+#                                  For most designs, this should be overridden
+#                                  to enable the elab/elab_debug aliases.
+# 
+# SYSTEM_INSTANCE_NAME          -- Instantiated system module name inside top level module.
+# 
+# QSYS_SIMDIR                   -- Qsys base simulation directory.
+# 
+# QUARTUS_INSTALL_DIR           -- Quartus installation directory.
+# 
+# USER_DEFINED_COMPILE_OPTIONS  -- User-defined compile options, added to com/dev_com aliases.
+# 
+# USER_DEFINED_ELAB_OPTIONS     -- User-defined elaboration options, added to elab/elab_debug aliases.
+# [exec] dev_com
+# [exec] com
+# Model Technology ModelSim ALTERA vlog 10.4b Compiler 2015.05 May 27 2015
+# Start time: 17:20:29 on Oct 21,2016
+# vlog -reportprogress 300 ./../../altera_fft_ii_151/sim/dct_fft_altera_fft_ii_151_lnky34i.vo -work dct_fft_altera_fft_ii_151 
+# -- Compiling module dct_fft_altera_fft_ii_151_lnky34i
+# 
+# Top level modules:
+# 	dct_fft_altera_fft_ii_151_lnky34i
+# End time: 17:20:30 on Oct 21,2016, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.4b Compiler 2015.05 May 27 2015
+# Start time: 17:20:30 on Oct 21,2016
+# vlog -reportprogress 300 ./../dct_fft.v 
+# -- Compiling module dct_fft
+# 
+# Top level modules:
+# 	dct_fft
+# End time: 17:20:30 on Oct 21,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.4b Compiler 2015.05 May 27 2015
+# Start time: 17:20:30 on Oct 21,2016
+# vlog -reportprogress 300 -sv ../../tb/dct_fft_tb.v 
+# -- Compiling module dct_fft_tb
+# 
+# Top level modules:
+# 	dct_fft_tb
+# End time: 17:20:30 on Oct 21,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# [exec] elab
+# vsim -t ps -L work -L work_lib -L dct_fft_altera_fft_ii_151 -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L twentynm_ver -L twentynm_hssi_ver -L twentynm_hip_ver dct_fft_tb 
+# Start time: 17:20:31 on Oct 21,2016
+# Loading sv_std.std
+# Loading work.dct_fft_tb
+# Loading work.dct_fft
+# Loading dct_fft_altera_fft_ii_151.dct_fft_altera_fft_ii_151_lnky34i
+# Loading altera_lnsim_ver.altera_syncram
+# Loading altera_lnsim_ver.ALTERA_LNSIM_MEMORY_INITIALIZATION
+# Loading altera_lnsim_ver.altera_syncram_forwarding_logic
+# Loading altera_mf_ver.altshift_taps
+# Loading lpm_ver.lpm_add_sub
+# Loading sgate_ver.oper_add
+# Loading sgate_ver.oper_less_than
+# Loading sgate_ver.oper_mult
+# Loading lpm_ver.lpm_mult
+# Loading lpm_ver.LPM_HINT_EVALUATION
+# Loading sgate_ver.oper_mux
+# Loading sgate_ver.oper_selector
+# ** Warning: (vsim-3016) ./../../altera_fft_ii_151/sim/dct_fft_altera_fft_ii_151_lnky34i.vo(18783): Port type is incompatible with connection (port 'wren_a').
+#    Time: 0 ps  Iteration: 0  Instance: /dct_fft_tb/u0/fft_ii_0/n11l0iO File: /build/swbuild/SJ/nightly/15.1/185/l64/work/modelsim/eda/sim_lib/altera_lnsim.sv
+# ** Warning: (vsim-3016) ./../../altera_fft_ii_151/sim/dct_fft_altera_fft_ii_151_lnky34i.vo(19077): Port type is incompatible with connection (port 'wren_a').
+#    Time: 0 ps  Iteration: 0  Instance: /dct_fft_tb/u0/fft_ii_0/nl0il1lO File: /build/swbuild/SJ/nightly/15.1/185/l64/work/modelsim/eda/sim_lib/altera_lnsim.sv
+# ** Warning: (vsim-3016) ./../../altera_fft_ii_151/sim/dct_fft_altera_fft_ii_151_lnky34i.vo(19150): Port type is incompatible with connection (port 'wren_a').
+#    Time: 0 ps  Iteration: 0  Instance: /dct_fft_tb/u0/fft_ii_0/nl0O0lOO File: /build/swbuild/SJ/nightly/15.1/185/l64/work/modelsim/eda/sim_lib/altera_lnsim.sv
+# ** Warning: (vsim-3016) ./../../altera_fft_ii_151/sim/dct_fft_altera_fft_ii_151_lnky34i.vo(19297): Port type is incompatible with connection (port 'wren_a').
+#    Time: 0 ps  Iteration: 0  Instance: /dct_fft_tb/u0/fft_ii_0/nl10ll1i File: /build/swbuild/SJ/nightly/15.1/185/l64/work/modelsim/eda/sim_lib/altera_lnsim.sv
+# ** Warning: (vsim-3016) ./../../altera_fft_ii_151/sim/dct_fft_altera_fft_ii_151_lnky34i.vo(19370): Port type is incompatible with connection (port 'wren_a').
+#    Time: 0 ps  Iteration: 0  Instance: /dct_fft_tb/u0/fft_ii_0/nl1110OO File: /build/swbuild/SJ/nightly/15.1/185/l64/work/modelsim/eda/sim_lib/altera_lnsim.sv
+# ** Warning: (vsim-3016) ./../../altera_fft_ii_151/sim/dct_fft_altera_fft_ii_151_lnky34i.vo(19443): Port type is incompatible with connection (port 'wren_a').
+#    Time: 0 ps  Iteration: 0  Instance: /dct_fft_tb/u0/fft_ii_0/nll0iiOi File: /build/swbuild/SJ/nightly/15.1/185/l64/work/modelsim/eda/sim_lib/altera_lnsim.sv
+# ** Warning: (vsim-3016) ./../../altera_fft_ii_151/sim/dct_fft_altera_fft_ii_151_lnky34i.vo(19516): Port type is incompatible with connection (port 'wren_a').
+#    Time: 0 ps  Iteration: 0  Instance: /dct_fft_tb/u0/fft_ii_0/nlll0i1l File: /build/swbuild/SJ/nightly/15.1/185/l64/work/modelsim/eda/sim_lib/altera_lnsim.sv
+# ** Warning: Design size of 38766 statements exceeds ModelSim Altera Starter recommended capacity.
+# Expect performance to be adversely affected.
+run 70us
+restart
+# ** Warning: (vsim-3016) ./../../altera_fft_ii_151/sim/dct_fft_altera_fft_ii_151_lnky34i.vo(18783): Port type is incompatible with connection (port 'wren_a').
+#    Time: 0 ps  Iteration: 0  Instance: /dct_fft_tb/u0/fft_ii_0/n11l0iO File: /build/swbuild/SJ/nightly/15.1/185/l64/work/modelsim/eda/sim_lib/altera_lnsim.sv
+# ** Warning: (vsim-3016) ./../../altera_fft_ii_151/sim/dct_fft_altera_fft_ii_151_lnky34i.vo(19077): Port type is incompatible with connection (port 'wren_a').
+#    Time: 0 ps  Iteration: 0  Instance: /dct_fft_tb/u0/fft_ii_0/nl0il1lO File: /build/swbuild/SJ/nightly/15.1/185/l64/work/modelsim/eda/sim_lib/altera_lnsim.sv
+# ** Warning: (vsim-3016) ./../../altera_fft_ii_151/sim/dct_fft_altera_fft_ii_151_lnky34i.vo(19150): Port type is incompatible with connection (port 'wren_a').
+#    Time: 0 ps  Iteration: 0  Instance: /dct_fft_tb/u0/fft_ii_0/nl0O0lOO File: /build/swbuild/SJ/nightly/15.1/185/l64/work/modelsim/eda/sim_lib/altera_lnsim.sv
+# ** Warning: (vsim-3016) ./../../altera_fft_ii_151/sim/dct_fft_altera_fft_ii_151_lnky34i.vo(19297): Port type is incompatible with connection (port 'wren_a').
+#    Time: 0 ps  Iteration: 0  Instance: /dct_fft_tb/u0/fft_ii_0/nl10ll1i File: /build/swbuild/SJ/nightly/15.1/185/l64/work/modelsim/eda/sim_lib/altera_lnsim.sv
+# ** Warning: (vsim-3016) ./../../altera_fft_ii_151/sim/dct_fft_altera_fft_ii_151_lnky34i.vo(19370): Port type is incompatible with connection (port 'wren_a').
+#    Time: 0 ps  Iteration: 0  Instance: /dct_fft_tb/u0/fft_ii_0/nl1110OO File: /build/swbuild/SJ/nightly/15.1/185/l64/work/modelsim/eda/sim_lib/altera_lnsim.sv
+# ** Warning: (vsim-3016) ./../../altera_fft_ii_151/sim/dct_fft_altera_fft_ii_151_lnky34i.vo(19443): Port type is incompatible with connection (port 'wren_a').
+#    Time: 0 ps  Iteration: 0  Instance: /dct_fft_tb/u0/fft_ii_0/nll0iiOi File: /build/swbuild/SJ/nightly/15.1/185/l64/work/modelsim/eda/sim_lib/altera_lnsim.sv
+# ** Warning: (vsim-3016) ./../../altera_fft_ii_151/sim/dct_fft_altera_fft_ii_151_lnky34i.vo(19516): Port type is incompatible with connection (port 'wren_a').
+#    Time: 0 ps  Iteration: 0  Instance: /dct_fft_tb/u0/fft_ii_0/nlll0i1l File: /build/swbuild/SJ/nightly/15.1/185/l64/work/modelsim/eda/sim_lib/altera_lnsim.sv
+run 70us
+restart
+# ** Warning: (vsim-3016) ./../../altera_fft_ii_151/sim/dct_fft_altera_fft_ii_151_lnky34i.vo(18783): Port type is incompatible with connection (port 'wren_a').
+#    Time: 0 ps  Iteration: 0  Instance: /dct_fft_tb/u0/fft_ii_0/n11l0iO File: /build/swbuild/SJ/nightly/15.1/185/l64/work/modelsim/eda/sim_lib/altera_lnsim.sv
+# ** Warning: (vsim-3016) ./../../altera_fft_ii_151/sim/dct_fft_altera_fft_ii_151_lnky34i.vo(19077): Port type is incompatible with connection (port 'wren_a').
+#    Time: 0 ps  Iteration: 0  Instance: /dct_fft_tb/u0/fft_ii_0/nl0il1lO File: /build/swbuild/SJ/nightly/15.1/185/l64/work/modelsim/eda/sim_lib/altera_lnsim.sv
+# ** Warning: (vsim-3016) ./../../altera_fft_ii_151/sim/dct_fft_altera_fft_ii_151_lnky34i.vo(19150): Port type is incompatible with connection (port 'wren_a').
+#    Time: 0 ps  Iteration: 0  Instance: /dct_fft_tb/u0/fft_ii_0/nl0O0lOO File: /build/swbuild/SJ/nightly/15.1/185/l64/work/modelsim/eda/sim_lib/altera_lnsim.sv
+# ** Warning: (vsim-3016) ./../../altera_fft_ii_151/sim/dct_fft_altera_fft_ii_151_lnky34i.vo(19297): Port type is incompatible with connection (port 'wren_a').
+#    Time: 0 ps  Iteration: 0  Instance: /dct_fft_tb/u0/fft_ii_0/nl10ll1i File: /build/swbuild/SJ/nightly/15.1/185/l64/work/modelsim/eda/sim_lib/altera_lnsim.sv
+# ** Warning: (vsim-3016) ./../../altera_fft_ii_151/sim/dct_fft_altera_fft_ii_151_lnky34i.vo(19370): Port type is incompatible with connection (port 'wren_a').
+#    Time: 0 ps  Iteration: 0  Instance: /dct_fft_tb/u0/fft_ii_0/nl1110OO File: /build/swbuild/SJ/nightly/15.1/185/l64/work/modelsim/eda/sim_lib/altera_lnsim.sv
+# ** Warning: (vsim-3016) ./../../altera_fft_ii_151/sim/dct_fft_altera_fft_ii_151_lnky34i.vo(19443): Port type is incompatible with connection (port 'wren_a').
+#    Time: 0 ps  Iteration: 0  Instance: /dct_fft_tb/u0/fft_ii_0/nll0iiOi File: /build/swbuild/SJ/nightly/15.1/185/l64/work/modelsim/eda/sim_lib/altera_lnsim.sv
+# ** Warning: (vsim-3016) ./../../altera_fft_ii_151/sim/dct_fft_altera_fft_ii_151_lnky34i.vo(19516): Port type is incompatible with connection (port 'wren_a').
+#    Time: 0 ps  Iteration: 0  Instance: /dct_fft_tb/u0/fft_ii_0/nlll0i1l File: /build/swbuild/SJ/nightly/15.1/185/l64/work/modelsim/eda/sim_lib/altera_lnsim.sv
+run 70us
+# End time: 17:40:57 on Oct 21,2016, Elapsed time: 0:20:26
+# Errors: 0, Warnings: 22

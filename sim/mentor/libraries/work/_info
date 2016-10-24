@@ -1,0 +1,52 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/work/pj104/code/1610/sim/dct/dct_fft/sim/mentor
+vdct_fft
+Z1 !s110 1477041630
+!i10b 1
+!s100 2V=l[:Q]B79`gnYgJ3mWS2
+IUYE]COe2F_H:z[D16iZ`@2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1476956101
+8./../dct_fft.v
+F./../dct_fft.v
+L0 6
+Z3 OV;L;10.4b;61
+r1
+!s85 0
+31
+Z4 !s108 1477041630.000000
+!s107 ./../dct_fft.v|
+!s90 -reportprogress|300|./../dct_fft.v|
+!i113 1
+vdct_fft_tb
+DXx6 sv_std 3 std 0 22 WmjPaeP=7F5?QFXzJ>D[Q2
+R1
+!i10b 1
+!s100 @EoZgKb9?;AeR1gTYA[R22
+I8PiB3U=gV=<gSR:?dggNT2
+R2
+!s105 dct_fft_tb_v_unit
+S1
+R0
+w1477039521
+8../../tb/dct_fft_tb.v
+F../../tb/dct_fft_tb.v
+L0 6
+R3
+r1
+!s85 0
+31
+R4
+!s107 ../../tb/dct_fft_tb.v|
+!s90 -reportprogress|300|-sv|../../tb/dct_fft_tb.v|
+!i113 1
+o-sv

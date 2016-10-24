@@ -1,0 +1,30 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/work/pj104/code/1610/sim/dct/dct_fft/sim/mentor
+vdct_fft_altera_fft_ii_151_lnky34i
+!s110 1477041630
+!i10b 1
+!s100 kcQ;PB;6Y^e9RoJQoPBX<1
+I?2=9TV@YkAY9W^Sc^OcFW1
+VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1476956157
+8./../../altera_fft_ii_151/sim/dct_fft_altera_fft_ii_151_lnky34i.vo
+F./../../altera_fft_ii_151/sim/dct_fft_altera_fft_ii_151_lnky34i.vo
+L0 32
+OV;L;10.4b;61
+r1
+!s85 0
+31
+!s108 1477041629.000000
+!s107 ./../../altera_fft_ii_151/sim/dct_fft_altera_fft_ii_151_lnky34i.vo|
+!s90 -reportprogress|300|./../../altera_fft_ii_151/sim/dct_fft_altera_fft_ii_151_lnky34i.vo|-work|dct_fft_altera_fft_ii_151|
+!i113 1
+o-work dct_fft_altera_fft_ii_151

@@ -1,0 +1,69 @@
+Info: Starting: Create simulation model
+Info: qsys-generate C:\work\pj104\code\1610\sim\dct\dct_fft.qsys --simulation=VERILOG --output-directory=C:\work\pj104\code\1610\sim\dct\dct_fft --family="Arria 10" --part=10AS016C3U19E2LG
+Progress: Loading dct/dct_fft.qsys
+Progress: Reading input file
+Progress: Adding fft_ii_0 [altera_fft_ii 15.1]
+Progress: Parameterizing module fft_ii_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: dct_fft: "Transforming system: dct_fft"
+Info: dct_fft: Running transform generation_view_transform
+Info: dct_fft: Running transform generation_view_transform took 0.000s
+Info: fft_ii_0: Running transform generation_view_transform
+Info: fft_ii_0: Running transform generation_view_transform took 0.000s
+Info: dct_fft: Running transform merlin_avalon_transform
+Info: dct_fft: Running transform merlin_avalon_transform took 0.054s
+Info: dct_fft: "Naming system components in system: dct_fft"
+Info: dct_fft: "Processing generation queue"
+Info: dct_fft: "Generating: dct_fft"
+Info: dct_fft: "Generating: dct_fft_altera_fft_ii_151_lnky34i"
+Info: fft_ii_0: Created simgen file at: C:/Users/longjia1/AppData/Local/Temp/alt7094_4406651477755575995.dir/0001_fft_ii_0_gen/dct_fft_altera_fft_ii_151_lnky34i.vo
+Info: dct_fft: Done "dct_fft" with 2 modules, 12 files
+Info: qsys-generate succeeded.
+Info: Finished: Create simulation model
+Info: Starting: Create Modelsim Project.
+Info: sim-script-gen --spd=C:\work\pj104\code\1610\sim\dct\dct_fft\dct_fft.spd --output-directory=C:/work/pj104/code/1610/sim/dct/dct_fft/sim/ --use-relative-paths=true
+Info: Doing: ip-make-simscript --spd=C:\work\pj104\code\1610\sim\dct\dct_fft\dct_fft.spd --output-directory=C:/work/pj104/code/1610/sim/dct/dct_fft/sim/ --use-relative-paths=true
+Info: Generating the following file(s) for MODELSIM simulator in C:/work/pj104/code/1610/sim/dct/dct_fft/sim/ directory:
+Info: 	mentor/msim_setup.tcl
+Info: Generating the following file(s) for VCS simulator in C:/work/pj104/code/1610/sim/dct/dct_fft/sim/ directory:
+Info: 	synopsys/vcs/vcs_setup.sh
+Info: Generating the following file(s) for VCSMX simulator in C:/work/pj104/code/1610/sim/dct/dct_fft/sim/ directory:
+Info: 	synopsys/vcsmx/synopsys_sim.setup
+Info: 	synopsys/vcsmx/vcsmx_setup.sh
+Info: Generating the following file(s) for NCSIM simulator in C:/work/pj104/code/1610/sim/dct/dct_fft/sim/ directory:
+Info: 	cadence/cds.lib
+Info: 	cadence/hdl.var
+Info: 	cadence/ncsim_setup.sh
+Info: 	1 .cds.lib files in cadence/cds_libs/ directory
+Info: Generating the following file(s) for RIVIERA simulator in C:/work/pj104/code/1610/sim/dct/dct_fft/sim/ directory:
+Info: 	aldec/rivierapro_setup.tcl
+Info: For information on how to simulate your IP, see the explanatory comments in the simulator-specific subdirectories under C:/work/pj104/code/1610/sim/dct/dct_fft/sim/.
+Info: Finished: Create Modelsim Project.
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate C:\work\pj104\code\1610\sim\dct\dct_fft.qsys --synthesis=VERILOG --output-directory=C:\work\pj104\code\1610\sim\dct\dct_fft --family="Arria 10" --part=10AS016C3U19E2LG
+Progress: Loading dct/dct_fft.qsys
+Progress: Reading input file
+Progress: Adding fft_ii_0 [altera_fft_ii 15.1]
+Progress: Parameterizing module fft_ii_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: dct_fft: "Transforming system: dct_fft"
+Info: dct_fft: Running transform generation_view_transform
+Info: dct_fft: Running transform generation_view_transform took 0.000s
+Info: fft_ii_0: Running transform generation_view_transform
+Info: fft_ii_0: Running transform generation_view_transform took 0.000s
+Info: dct_fft: Running transform merlin_avalon_transform
+Info: dct_fft: Running transform merlin_avalon_transform took 0.007s
+Info: dct_fft: "Naming system components in system: dct_fft"
+Info: dct_fft: "Processing generation queue"
+Info: dct_fft: "Generating: dct_fft"
+Info: dct_fft: "Generating: dct_fft_altera_fft_ii_151_lnky34i"
+Info: dct_fft: Done "dct_fft" with 2 modules, 56 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

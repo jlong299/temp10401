@@ -1,0 +1,28 @@
+# system info dct_fft on 2016.10.20.17:35:57
+system_info:
+name,value
+DEVICE,10AS016C3U19E2LG
+DEVICE_FAMILY,Arria 10
+GENERATION_ID,1476956101
+#
+#
+# Files generated for dct_fft on 2016.10.20.17:35:57
+files:
+filepath,kind,attributes,module,is_top
+sim/dct_fft.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,dct_fft,true
+altera_fft_ii_151/sim/dct_fft_altera_fft_ii_151_lnky34i_opt_twr2.hex,HEX,,dct_fft_altera_fft_ii_151_lnky34i,false
+altera_fft_ii_151/sim/dct_fft_altera_fft_ii_151_lnky34i_opt_twi3.hex,HEX,,dct_fft_altera_fft_ii_151_lnky34i,false
+altera_fft_ii_151/sim/dct_fft_altera_fft_ii_151_lnky34i_opt_twr3.hex,HEX,,dct_fft_altera_fft_ii_151_lnky34i,false
+altera_fft_ii_151/sim/dct_fft_altera_fft_ii_151_lnky34i_opt_twi4.hex,HEX,,dct_fft_altera_fft_ii_151_lnky34i,false
+altera_fft_ii_151/sim/dct_fft_altera_fft_ii_151_lnky34i_opt_twi1.hex,HEX,,dct_fft_altera_fft_ii_151_lnky34i,false
+altera_fft_ii_151/sim/dct_fft_altera_fft_ii_151_lnky34i_opt_twr4.hex,HEX,,dct_fft_altera_fft_ii_151_lnky34i,false
+altera_fft_ii_151/sim/dct_fft_altera_fft_ii_151_lnky34i_opt_twi5.hex,HEX,,dct_fft_altera_fft_ii_151_lnky34i,false
+altera_fft_ii_151/sim/dct_fft_altera_fft_ii_151_lnky34i_opt_twr1.hex,HEX,,dct_fft_altera_fft_ii_151_lnky34i,false
+altera_fft_ii_151/sim/dct_fft_altera_fft_ii_151_lnky34i_opt_twr5.hex,HEX,,dct_fft_altera_fft_ii_151_lnky34i,false
+altera_fft_ii_151/sim/dct_fft_altera_fft_ii_151_lnky34i_opt_twi2.hex,HEX,,dct_fft_altera_fft_ii_151_lnky34i,false
+altera_fft_ii_151/sim/dct_fft_altera_fft_ii_151_lnky34i.vo,VERILOG,,dct_fft_altera_fft_ii_151_lnky34i,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+dct_fft.fft_ii_0,dct_fft_altera_fft_ii_151_lnky34i
