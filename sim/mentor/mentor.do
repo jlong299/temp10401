@@ -21,15 +21,19 @@ set TOP_LEVEL_NAME dct_fft_tb
 com
 # Compile the user top-level
 vlog -sv ../../tb/dct_fft_tb.v
+vlog -sv ../../src/dct_vecRot_ram.v 
+vlog -sv ../../src/RAM_FIFO/RAM_dct_vecRot/sim/RAM_dct_vecRot.v
+vlog -sv ../../src/RAM_FIFO/RAM_dct_vecRot/ram_2port_151/sim/RAM_dct_vecRot_ram_2port_151_65vwdsi.v
 # Elaborate the design.
 elab
 # Run the simulation
 
 view wave
 add wave *
+add wave sim:/dct_fft_tb/dct_vecRot_ram_inst/*
 view structure
 view signals
-run 2us
+run 70us
 # Report success to the shell
 # exit -code 0
 # End of template

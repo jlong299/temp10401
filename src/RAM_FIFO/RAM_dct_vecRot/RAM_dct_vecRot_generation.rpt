@@ -1,0 +1,74 @@
+Info: Starting: Create simulation model
+Info: qsys-generate C:\work\pj104\code\1610\sim\dct\dct_fft\src\RAM_FIFO\RAM_dct_vecRot.qsys --simulation=VERILOG --output-directory=C:\work\pj104\code\1610\sim\dct\dct_fft\src\RAM_FIFO\RAM_dct_vecRot --family="Arria 10" --part=10AX115U3F45E2SGE3
+Progress: Loading RAM_FIFO/RAM_dct_vecRot.qsys
+Progress: Reading input file
+Progress: Adding ram_2port_0 [ram_2port 15.1]
+Progress: Parameterizing module ram_2port_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+: RAM_dct_vecRot.ram_2port_0: Targeting device family: Arria 10.
+: RAM_dct_vecRot.ram_2port_0: 'q_a' output bus width will be ignored while using one read port and one write port mode.
+: RAM_dct_vecRot.ram_2port_0: Tab Output2 is unavailable while using one read port and one write port.
+Info: RAM_dct_vecRot: "Transforming system: RAM_dct_vecRot"
+Info: RAM_dct_vecRot: Running transform generation_view_transform
+Info: RAM_dct_vecRot: Running transform generation_view_transform took 0.000s
+Info: ram_2port_0: Running transform generation_view_transform
+Info: ram_2port_0: Running transform generation_view_transform took 0.000s
+Info: RAM_dct_vecRot: Running transform merlin_avalon_transform
+Info: RAM_dct_vecRot: Running transform merlin_avalon_transform took 0.045s
+Info: RAM_dct_vecRot: "Naming system components in system: RAM_dct_vecRot"
+Info: RAM_dct_vecRot: "Processing generation queue"
+Info: RAM_dct_vecRot: "Generating: RAM_dct_vecRot"
+Info: RAM_dct_vecRot: "Generating: RAM_dct_vecRot_ram_2port_151_65vwdsi"
+Info: RAM_dct_vecRot: Done "RAM_dct_vecRot" with 2 modules, 2 files
+Info: qsys-generate succeeded.
+Info: Finished: Create simulation model
+Info: Starting: Create Modelsim Project.
+Info: sim-script-gen --spd=C:\work\pj104\code\1610\sim\dct\dct_fft\src\RAM_FIFO\RAM_dct_vecRot\RAM_dct_vecRot.spd --output-directory=C:/work/pj104/code/1610/sim/dct/dct_fft/src/RAM_FIFO/RAM_dct_vecRot/sim/ --use-relative-paths=true
+Info: Doing: ip-make-simscript --spd=C:\work\pj104\code\1610\sim\dct\dct_fft\src\RAM_FIFO\RAM_dct_vecRot\RAM_dct_vecRot.spd --output-directory=C:/work/pj104/code/1610/sim/dct/dct_fft/src/RAM_FIFO/RAM_dct_vecRot/sim/ --use-relative-paths=true
+Info: Generating the following file(s) for MODELSIM simulator in C:/work/pj104/code/1610/sim/dct/dct_fft/src/RAM_FIFO/RAM_dct_vecRot/sim/ directory:
+Info: 	mentor/msim_setup.tcl
+Info: Generating the following file(s) for VCS simulator in C:/work/pj104/code/1610/sim/dct/dct_fft/src/RAM_FIFO/RAM_dct_vecRot/sim/ directory:
+Info: 	synopsys/vcs/vcs_setup.sh
+Info: Generating the following file(s) for VCSMX simulator in C:/work/pj104/code/1610/sim/dct/dct_fft/src/RAM_FIFO/RAM_dct_vecRot/sim/ directory:
+Info: 	synopsys/vcsmx/synopsys_sim.setup
+Info: 	synopsys/vcsmx/vcsmx_setup.sh
+Info: Generating the following file(s) for NCSIM simulator in C:/work/pj104/code/1610/sim/dct/dct_fft/src/RAM_FIFO/RAM_dct_vecRot/sim/ directory:
+Info: 	cadence/cds.lib
+Info: 	cadence/hdl.var
+Info: 	cadence/ncsim_setup.sh
+Info: 	1 .cds.lib files in cadence/cds_libs/ directory
+Info: Generating the following file(s) for RIVIERA simulator in C:/work/pj104/code/1610/sim/dct/dct_fft/src/RAM_FIFO/RAM_dct_vecRot/sim/ directory:
+Info: 	aldec/rivierapro_setup.tcl
+Info: For information on how to simulate your IP, see the explanatory comments in the simulator-specific subdirectories under C:/work/pj104/code/1610/sim/dct/dct_fft/src/RAM_FIFO/RAM_dct_vecRot/sim/.
+Info: Finished: Create Modelsim Project.
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate C:\work\pj104\code\1610\sim\dct\dct_fft\src\RAM_FIFO\RAM_dct_vecRot.qsys --synthesis=VERILOG --output-directory=C:\work\pj104\code\1610\sim\dct\dct_fft\src\RAM_FIFO\RAM_dct_vecRot --family="Arria 10" --part=10AX115U3F45E2SGE3
+Progress: Loading RAM_FIFO/RAM_dct_vecRot.qsys
+Progress: Reading input file
+Progress: Adding ram_2port_0 [ram_2port 15.1]
+Progress: Parameterizing module ram_2port_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+: RAM_dct_vecRot.ram_2port_0: Targeting device family: Arria 10.
+: RAM_dct_vecRot.ram_2port_0: 'q_a' output bus width will be ignored while using one read port and one write port mode.
+: RAM_dct_vecRot.ram_2port_0: Tab Output2 is unavailable while using one read port and one write port.
+Info: RAM_dct_vecRot: "Transforming system: RAM_dct_vecRot"
+Info: RAM_dct_vecRot: Running transform generation_view_transform
+Info: RAM_dct_vecRot: Running transform generation_view_transform took 0.000s
+Info: ram_2port_0: Running transform generation_view_transform
+Info: ram_2port_0: Running transform generation_view_transform took 0.000s
+Info: RAM_dct_vecRot: Running transform merlin_avalon_transform
+Info: RAM_dct_vecRot: Running transform merlin_avalon_transform took 0.007s
+Info: RAM_dct_vecRot: "Naming system components in system: RAM_dct_vecRot"
+Info: RAM_dct_vecRot: "Processing generation queue"
+Info: RAM_dct_vecRot: "Generating: RAM_dct_vecRot"
+Info: RAM_dct_vecRot: "Generating: RAM_dct_vecRot_ram_2port_151_65vwdsi"
+Info: RAM_dct_vecRot: Done "RAM_dct_vecRot" with 2 modules, 3 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

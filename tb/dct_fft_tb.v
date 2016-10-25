@@ -140,6 +140,39 @@ module dct_fft_tb (
 			if (source_eop)  $fclose(wr_file);
 	end
 
+	dct_vecRot_ram #(  
+		.wDataIn (16),  
+		.wDataOut (16)  
+	)
+	dct_vecRot_ram_inst
+	(
+	// left side
+	.rst_n_sync (rst_n),  // clk synchronous reset active low
+	.clk (clk),    
+
+	.sink_valid (source_valid), 
+	.sink_ready (source_ready), 
+	.sink_error (source_error), 
+	.sink_sop 	(source_sop  ),   
+	.sink_eop 	(source_eop  ),   
+	.sink_real 	(source_real ),  
+	.sink_imag 	(source_imag ),  
+
+	.fftpts_in (fftpts_out),    
+
+	//right side
+	.source_valid	(), 
+	.source_ready	(1'b1), 
+	.source_error	(), 
+	.source_sop		(),   
+	.source_eop		(),   
+	.source_real	(),  
+	.source_imag	(),  
+	.source_real_rev	(),  
+	.source_imag_rev	(),  
+	.fftpts_out()
+	);
+
 
 
 endmodule

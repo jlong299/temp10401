@@ -1,0 +1,18 @@
+# system info RAM_dct_vecRot on 2016.10.25.14:53:16
+system_info:
+name,value
+DEVICE,10AX115U3F45E2SGE3
+DEVICE_FAMILY,Arria 10
+GENERATION_ID,1477378396
+#
+#
+# Files generated for RAM_dct_vecRot on 2016.10.25.14:53:16
+files:
+filepath,kind,attributes,module,is_top
+sim/RAM_dct_vecRot.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,RAM_dct_vecRot,true
+ram_2port_151/sim/RAM_dct_vecRot_ram_2port_151_65vwdsi.v,VERILOG,,RAM_dct_vecRot_ram_2port_151_65vwdsi,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+RAM_dct_vecRot.ram_2port_0,RAM_dct_vecRot_ram_2port_151_65vwdsi
