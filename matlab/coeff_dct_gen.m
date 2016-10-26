@@ -25,14 +25,22 @@ end
 % fclose(outf);
 
 %% Gen mif file
-outf = fopen('../src/RAM_FIFO/coeff_dct_fft.mif','w');
+outf = fopen('../src/RAM_FIFO/coeff_cos_dct_vecRot.mif','w');
 width = 18;
-depth = 4096;
+depth = 2048;
 fprintf(outf,'WIDTH=%d;\nDEPTH=%d;\n\nADDRESS_RADIX=UNS;\nDATA_RADIX=DEC;\n\nCONTENT BEGIN\n',width,depth);
 for k=1:N
-    fprintf(outf,'%d:%d;\n',2*k-2,round(real(65536*coeff_numerator(k))));
-    fprintf(outf,'%d:%d;\n',2*k-1,round(imag(65536*coeff_numerator(k))));
+    fprintf(outf,'%d:%d;\n',k-1,round(real(65536*coeff_numerator(k))));
 end
 fprintf(outf,'END;\n');
 fclose(outf);
+
+outf = fopen('../src/RAM_FIFO/coeff_sin_dct_vecRot.mif','w');
+fprintf(outf,'WIDTH=%d;\nDEPTH=%d;\n\nADDRESS_RADIX=UNS;\nDATA_RADIX=DEC;\n\nCONTENT BEGIN\n',width,depth);
+for k=1:N
+    fprintf(outf,'%d:%d;\n',k-1,round(imag(65536*coeff_numerator(k))));
+end
+fprintf(outf,'END;\n');
+fclose(outf);
+
 

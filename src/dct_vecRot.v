@@ -10,13 +10,30 @@
 //  ----------------------------------------------------------------
 //  Detail :  (Matlab Code)
 //
+//  %% Calc dct from fft
+//  x_reod = zeros(1,N);
+//  x_reod(1:N/2) = x(1:2:N-1);
+//  x_reod(N/2+1:N) = x(N:-2:2);
+// 
+//      F = fft(x_reod);
+//      %disp(F);
+// 
 //  w = sqrt(2/N)*ones(1,N);
 //  w(1) = 1/sqrt(N);
-//  D1(1) = w(1)*F(1);
-//    for k = 2:N
-//        D1(k) = 1/2*( exp(-1j*pi*(k-1)/(2*N))* F(k) + exp(1j*pi*(k-1)/(2*N))* F(N+2-k));
-//        D1(k) = w(k)*D1(k);
-//    end
+// 
+//  if complex_sig == 0
+//      for k = 1:N
+//          D1(k) = exp(-1j*pi*(k-1)/(2*N))* F(k);
+//      end
+//      % disp(real(D1));
+//  else
+//      D1(1) = w(1)*F(1);
+//      for k = 2:N
+//          D1(k) = 1/2*( exp(-1j*pi*(k-1)/(2*N))* F(k) + exp(1j*pi*(k-1)/(2*N))* F(N+2-k));
+//          D1(k) = w(k)*D1(k);
+//      end
+//     % disp(D1);
+//  end
 //  --------------------------------------------------------------------------------------------------
 //  ST_sink --> |                 |     | dct_vecRot_coeff |-->  |                    | --> ST_source_t1
 //              | dct_vecRot_ram  |     -------------------      | dct_vecRot_twiddle |
@@ -32,13 +49,13 @@
 
 
 module dct_vecRot #(parameter  
-		wDataIn = 16,  
+		wDataIn = 28,  
 		wDataOut =16  
 	)
 	(
 	// left side
-	input 					rst_n_sync,  // clk synchronous reset active low
-	input 					clk,    
+	input wire				rst_n_sync,  // clk synchronous reset active low
+	input wire				clk,    
 
 	input wire        sink_valid, // sink.sink_valid
 	output wire       sink_ready, //       .sink_ready
@@ -63,8 +80,8 @@ module dct_vecRot #(parameter
 
 
 
-localparam 	wDataOut_t0 = 16;
-localparam 	wDataOut_t1 = 16;
+localparam 	wDataOut_t0 = 28;
+localparam 	wDataOut_t1 = 22;
 localparam 	wCoeff = 18;
 
 wire        source_valid_t0; // source.source_valid
@@ -94,7 +111,7 @@ assign source_error = 2'b00;
 
 dct_vecRot_ram #(
 	.wDataIn (wDataIn),  
-	.wDataOut (wDataOut_t0)  
+	.wDataOut (28)  
 	)
 dct_vecRot_ram_inst (
 	// left side
@@ -147,7 +164,7 @@ dct_vecRot_twiddle_inst (
 
 	.fftpts_in 		(fftpts_in),
 
-	// 2 clks delay with sink_valid
+	// 1 clks delay with sink_valid
 	.sink_cos 		(coeff_cos ),  
 	.sink_sin 		(coeff_sin ), 
 
@@ -176,7 +193,7 @@ dct_vecRot_coeff_inst (
 	.fftpts_in 		(fftpts_in),
 
 	// right side
-	// 2 clks delay with sink_valid
+	// 1 clks delay with sink_valid
 	.source_cos 	(coeff_cos ),  
 	.source_sin 	(coeff_sin )
 	);

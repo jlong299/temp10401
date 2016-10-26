@@ -15,13 +15,13 @@ Info: RAM_dct_vecRot: "Transforming system: RAM_dct_vecRot"
 Info: RAM_dct_vecRot: Running transform generation_view_transform
 Info: RAM_dct_vecRot: Running transform generation_view_transform took 0.000s
 Info: ram_2port_0: Running transform generation_view_transform
-Info: ram_2port_0: Running transform generation_view_transform took 0.001s
+Info: ram_2port_0: Running transform generation_view_transform took 0.000s
 Info: RAM_dct_vecRot: Running transform merlin_avalon_transform
-Info: RAM_dct_vecRot: Running transform merlin_avalon_transform took 0.033s
+Info: RAM_dct_vecRot: Running transform merlin_avalon_transform took 0.045s
 Info: RAM_dct_vecRot: "Naming system components in system: RAM_dct_vecRot"
 Info: RAM_dct_vecRot: "Processing generation queue"
 Info: RAM_dct_vecRot: "Generating: RAM_dct_vecRot"
-Info: RAM_dct_vecRot: "Generating: RAM_dct_vecRot_ram_2port_151_wiakyiq"
+Info: RAM_dct_vecRot: "Generating: RAM_dct_vecRot_ram_2port_151_65vwdsi"
 Info: RAM_dct_vecRot: Done "RAM_dct_vecRot" with 2 modules, 2 files
 Info: qsys-generate succeeded.
 Info: Finished: Create simulation model
@@ -68,7 +68,7 @@ Info: RAM_dct_vecRot: Running transform merlin_avalon_transform took 0.007s
 Info: RAM_dct_vecRot: "Naming system components in system: RAM_dct_vecRot"
 Info: RAM_dct_vecRot: "Processing generation queue"
 Info: RAM_dct_vecRot: "Generating: RAM_dct_vecRot"
-Info: RAM_dct_vecRot: "Generating: RAM_dct_vecRot_ram_2port_151_wiakyiq"
+Info: RAM_dct_vecRot: "Generating: RAM_dct_vecRot_ram_2port_151_65vwdsi"
 Info: RAM_dct_vecRot: Done "RAM_dct_vecRot" with 2 modules, 3 files
 Info: qsys-generate succeeded.
 Info: Finished: Create HDL design files for synthesis

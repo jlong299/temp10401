@@ -5,9 +5,10 @@
   <columns>
    <connections preferredWidth="31" />
    <irq preferredWidth="34" />
+   <name preferredWidth="216" />
   </columns>
  </systemtable>
  <library expandedCategories="Library,Project" />
- <window width="1100" height="800" x="366" y="92" />
+ <window width="1920" height="1160" x="0" y="0" />
  <generation path="" block_symbol_file="0" simulation="VERILOG" />
 </preferences>

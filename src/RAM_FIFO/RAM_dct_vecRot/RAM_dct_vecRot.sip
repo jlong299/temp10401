@@ -5,4 +5,4 @@ set_global_assignment -library "lib_RAM_dct_vecRot" -name SPD_FILE [file join $:
 set_global_assignment -library "lib_RAM_dct_vecRot" -name MISC_FILE [file join $::quartus(sip_path) "../RAM_dct_vecRot.qsys"]
 
 set_global_assignment -library "lib_RAM_dct_vecRot" -name MISC_FILE [file join $::quartus(sip_path) "sim/RAM_dct_vecRot.v"]
-set_global_assignment -library "lib_RAM_dct_vecRot" -name MISC_FILE [file join $::quartus(sip_path) "ram_2port_151/sim/RAM_dct_vecRot_ram_2port_151_65vwdsi.v"]
+set_global_assignment -library "lib_RAM_dct_vecRot" -name MISC_FILE [file join $::quartus(sip_path) "ram_2port_151/sim/RAM_dct_vecRot_ram_2port_151_byb7zvy.v"]

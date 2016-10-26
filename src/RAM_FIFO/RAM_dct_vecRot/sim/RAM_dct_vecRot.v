@@ -4,15 +4,15 @@
 
 `timescale 1 ps / 1 ps
 module RAM_dct_vecRot (
-		input  wire [31:0] data,      //  ram_input.datain
+		input  wire [55:0] data,      //  ram_input.datain
 		input  wire [9:0]  wraddress, //           .wraddress
 		input  wire [9:0]  rdaddress, //           .rdaddress
 		input  wire        wren,      //           .wren
 		input  wire        clock,     //           .clock
-		output wire [31:0] q          // ram_output.dataout
+		output wire [55:0] q          // ram_output.dataout
 	);
 
-	RAM_dct_vecRot_ram_2port_151_65vwdsi ram_2port_0 (
+	RAM_dct_vecRot_ram_2port_151_byb7zvy ram_2port_0 (
 		.data      (data),      //  ram_input.datain
 		.wraddress (wraddress), //           .wraddress
 		.rdaddress (rdaddress), //           .rdaddress

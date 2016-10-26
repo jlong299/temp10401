@@ -5,11 +5,11 @@
  version="1.0"
  fabric="QSYS">
  <!-- Format version 15.1 185 (Future versions may contain additional information.) -->
- <!-- 2016.10.25.14:53:20 -->
+ <!-- 2016.10.26.10:15:47 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1477378400</value>
+  <value>1477448147</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -115,7 +115,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="GUI_QA_WIDTH">
    <type>int</type>
-   <value>32</value>
+   <value>56</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -123,7 +123,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="GUI_QB_WIDTH">
    <type>int</type>
-   <value>32</value>
+   <value>56</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -131,7 +131,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="GUI_DATAA_WIDTH">
    <type>int</type>
-   <value>32</value>
+   <value>56</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -523,7 +523,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="GUI_BYTE_WIDTH">
    <type>int</type>
-   <value>4</value>
+   <value>7</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -539,7 +539,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="GUI_DATA_WIDTH">
    <type>int</type>
-   <value>32</value>
+   <value>56</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -547,7 +547,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="GUI_Q_WIDTH">
    <type>int</type>
-   <value>32</value>
+   <value>56</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -654,7 +654,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>data</name>
     <direction>Input</direction>
-    <width>32</width>
+    <width>56</width>
     <role>datain</role>
    </port>
    <port>
@@ -727,7 +727,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>q</name>
     <direction>Output</direction>
-    <width>32</width>
+    <width>56</width>
     <role>dataout</role>
    </port>
   </interface>

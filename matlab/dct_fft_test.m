@@ -1,10 +1,10 @@
 complex_sig = 1;
 
-x=1:8;
+x=1:2048;
 if complex_sig == 1
-x=x*(1+3j);
+x=x*(1+1j);
 end
-disp(x);
+%disp(x);
 
 N=length(x);
 D0 = dct_t(x);
@@ -27,14 +27,14 @@ if complex_sig == 0
     for k = 1:N
         D1(k) = exp(-1j*pi*(k-1)/(2*N))* F(k);
     end
-    disp(real(D1));
+    % disp(real(D1));
 else
     D1(1) = w(1)*F(1);
     for k = 2:N
         D1(k) = 1/2*( exp(-1j*pi*(k-1)/(2*N))* F(k) + exp(1j*pi*(k-1)/(2*N))* F(N+2-k));
         D1(k) = w(k)*D1(k);
     end
-    disp(D1);
+   % disp(D1);
 end
 
 %% Calc idct from dct result and ifft
@@ -51,7 +51,7 @@ x1_reod = ifft(F1);
 x1 = zeros(1,N);
 x1(1:2:N-1) = x1_reod(1:N/2);
 x1(2:2:N) = x1_reod(N:-1:N/2+1);
-disp(x1);
+%disp(x1);
 
 
     

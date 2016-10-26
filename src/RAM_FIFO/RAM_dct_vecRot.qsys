@@ -84,7 +84,7 @@
   <parameter name="GUI_CLOCK_TYPE" value="0" />
   <parameter name="GUI_COHERENT_READ" value="false" />
   <parameter name="GUI_CONSTRAINED_DONT_CARE" value="true" />
-  <parameter name="GUI_DATAA_WIDTH" value="32" />
+  <parameter name="GUI_DATAA_WIDTH" value="56" />
   <parameter name="GUI_DIFFERENT_CLKENS" value="false" />
   <parameter name="GUI_ECCENCBYPASS" value="false" />
   <parameter name="GUI_ECC_DOUBLE" value="false" />
@@ -102,8 +102,8 @@
   <parameter name="GUI_MODE" value="0" />
   <parameter name="GUI_NBE_A" value="true" />
   <parameter name="GUI_NBE_B" value="true" />
-  <parameter name="GUI_QA_WIDTH" value="32" />
-  <parameter name="GUI_QB_WIDTH" value="32" />
+  <parameter name="GUI_QA_WIDTH" value="56" />
+  <parameter name="GUI_QB_WIDTH" value="56" />
   <parameter name="GUI_Q_PORT_MODE" value="2" />
   <parameter name="GUI_RAM_BLOCK_TYPE" value="Auto" />
   <parameter name="GUI_RDEN_DOUBLE" value="false" />

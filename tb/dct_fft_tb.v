@@ -33,16 +33,16 @@ module dct_fft_tb (
 	reg [15:0] cnt_rd;
 	integer 	data_file, scan_file, wr_file;
 	reg [31:0] 	captured_data, captured_data_imag;
-	localparam reg [15:0] cnt_rd_end = 16'd2048;
-	localparam reg [11:0] fftpts_cnst = 12'd2048;
+	localparam reg [15:0] cnt_rd_end = 16'd8;
+	localparam reg [11:0] fftpts_cnst = 12'd8;
 
 	initial	begin
 		rst_n = 0;
 		clk = 0;
-		source_ready = 0;
+		//source_ready = 0;
 
 		# 100 rst_n = 1'b1;
-		source_ready = 1'b1;
+		//source_ready = 1'b1;
 	end
 
 	initial begin
@@ -140,11 +140,11 @@ module dct_fft_tb (
 			if (source_eop)  $fclose(wr_file);
 	end
 
-	dct_vecRot_ram #(  
-		.wDataIn (16),  
+	dct_vecRot #(  
+		.wDataIn (28),  
 		.wDataOut (16)  
 	)
-	dct_vecRot_ram_inst
+	dct_vecRot_inst
 	(
 	// left side
 	.rst_n_sync (rst_n),  // clk synchronous reset active low
@@ -168,8 +168,6 @@ module dct_fft_tb (
 	.source_eop		(),   
 	.source_real	(),  
 	.source_imag	(),  
-	.source_real_rev	(),  
-	.source_imag_rev	(),  
 	.fftpts_out()
 	);
 

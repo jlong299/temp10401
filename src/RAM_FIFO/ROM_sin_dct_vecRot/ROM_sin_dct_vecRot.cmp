@@ -1,0 +1,8 @@
+	component ROM_sin_dct_vecRot is
+		port (
+			address : in  std_logic_vector(10 downto 0) := (others => 'X'); -- address
+			clock   : in  std_logic                     := 'X';             -- clk
+			q       : out std_logic_vector(17 downto 0)                     -- dataout
+		);
+	end component ROM_sin_dct_vecRot;
+

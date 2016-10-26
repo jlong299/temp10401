@@ -30,13 +30,13 @@
 
 
 module dct_vecRot_ram #(parameter  
-		wDataIn = 16,  
-		wDataOut =16  
+		wDataIn = 28,  
+		wDataOut =28  
 	)
 	(
 	// left side
-	input 					rst_n_sync,  // clk synchronous reset active low
-	input 					clk,    
+	input wire				rst_n_sync,  // clk synchronous reset active low
+	input wire				clk,    
 
 	input wire        sink_valid, // sink.sink_valid
 	output reg       sink_ready, //       .sink_ready
@@ -64,7 +64,7 @@ module dct_vecRot_ram #(parameter
 wire [11:0] 	fftpts_divd2;
 reg 	wren0, wren1;
 reg	 [9:0]	wraddress0, rdaddress0, wraddress1, rdaddress1;	//constant width
-wire [2*wDataOut-1:0]  	q0, q1;
+wire [2*wDataOut -1:0]  	q0, q1;
 reg [1:0] 	fsm;
 wire [2*wDataIn-1:0] 	data;
 reg [11:0] 		cnt_sink_valid;
@@ -73,6 +73,7 @@ reg 	read_latter_half, read_latter_half_r;
 assign 	source_error = 2'b00;
 assign 	fftpts_divd2 = {1'b0,fftpts_in[11:1]};
 assign 	data = {sink_real,sink_imag};
+assign  fftpts_out = fftpts_in;
 
 
 //--------------  2 RAMs (Each RAM only stores half of the data)-----------------
