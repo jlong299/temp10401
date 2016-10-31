@@ -28,9 +28,14 @@ vlog -sv ../../src/dct_vecRot_twiddle.v
 vlog -sv ../../src/dct_vecRot_scaling.v 
 vlog -sv ../../src/dct_vecRot_coeff.v 
 vlog -sv ../../src/RAM_FIFO/ROM_cos_dct_vecRot/sim/ROM_cos_dct_vecRot.v
-vlog -sv ../../src/RAM_FIFO/ROM_cos_dct_vecRot/rom_1port_151/sim/ROM_cos_dct_vecRot_rom_1port_151_yg5vrxq.v
+vlog -sv ../../src/RAM_FIFO/ROM_cos_dct_vecRot/rom_1port_151/sim/ROM_cos_dct_vecRot_rom_1port_151_gip373i.v
 vlog -sv ../../src/RAM_FIFO/ROM_sin_dct_vecRot/sim/ROM_sin_dct_vecRot.v
-vlog -sv ../../src/RAM_FIFO/ROM_sin_dct_vecRot/rom_1port_151/sim/ROM_sin_dct_vecRot_rom_1port_151_cxpskji.v
+vlog -sv ../../src/RAM_FIFO/ROM_sin_dct_vecRot/rom_1port_151/sim/ROM_sin_dct_vecRot_rom_1port_151_xhfa2qa.v
+vlog -sv ../../src/dct_vecRot.v 
+vlog -sv ../../src/RAM_FIFO/RAM_dct_preFFT_reod/sim/RAM_dct_preFFT_reod.v
+vlog -sv ../../src/RAM_FIFO/RAM_dct_preFFT_reod/ram_2port_151/sim/RAM_dct_preFFT_reod_ram_2port_151_nn5gxoa.v
+vlog -sv ../../src/dct_preFFT_reod.v 
+vlog -sv ../../src/dct_top.v 
 
 # Elaborate the design.
 elab
@@ -38,10 +43,11 @@ elab
 
 view wave
 add wave *
-add wave sim:/dct_fft_tb/dct_vecRot_inst/*
+add wave sim:/dct_fft_tb/u0/*
+#add wave sim:/dct_fft_tb/u0/dct_preFFT_reod_inst/*
 view structure
 view signals
-run 8us
+run 100us
 # Report success to the shell
 # exit -code 0
 # End of template

@@ -1,13 +1,20 @@
 complex_sig = 1;
 
-x=round((2*rand(1,2048)-1)*8192);
+x_real=round((2*rand(1,2048)-1)*8192);
+x_imag=round((2*rand(1,2048)-1)*8192);
 if complex_sig == 1
-x=x*(1+1j);
+x = x_real + 1j*x_imag;
 end
 %disp(x); 
 
 N=length(x);
 D0 = dct_t(x);
+
+srcf = fopen('../sim/mentor/dct_src.dat','w');
+for k = 1 :N
+    fprintf(srcf , '%d %d\n' , real(x(k)), imag(x(k)));
+end
+fclose(srcf);
 
 %disp(D0);
 %disp(idct_t(D0));
@@ -17,11 +24,6 @@ x_reod = zeros(1,N);
 x_reod(1:N/2) = x(1:2:N-1);
 x_reod(N/2+1:N) = x(N:-2:2);
 
-srcf = fopen('../sim/mentor/dct_src.dat','w');
-for k = 1 :N
-    fprintf(srcf , '%d %d\n' , real(x_reod(k)), imag(x_reod(k)));
-end
-fclose(srcf);
 
     F = fft(x_reod);
     %disp(F);

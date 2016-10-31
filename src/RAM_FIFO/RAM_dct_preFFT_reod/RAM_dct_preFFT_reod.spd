@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="ram_2port_151/sim/RAM_dct_preFFT_reod_ram_2port_151_nn5gxoa.v"
+   type="VERILOG"
+   library="RAM_dct_preFFT_reod_ram_2port_151" />
+ <file
+   path="sim/RAM_dct_preFFT_reod.v"
+   type="VERILOG"
+   hasInlineConfiguration="true" />
+ <topLevel name="RAM_dct_preFFT_reod" />
+ <deviceFamily name="arria10" />
+</simPackage>

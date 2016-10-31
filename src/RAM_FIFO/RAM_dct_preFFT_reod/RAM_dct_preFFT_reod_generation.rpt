@@ -1,0 +1,74 @@
+Info: Starting: Create simulation model
+Info: qsys-generate C:\work\pj104\code\1610\sim\dct\dct_fft\src\RAM_FIFO\RAM_dct_preFFT_reod.qsys --simulation=VERILOG --output-directory=C:\work\pj104\code\1610\sim\dct\dct_fft\src\RAM_FIFO\RAM_dct_preFFT_reod --family="Arria 10" --part=10AX115U3F45E2SGE3
+Progress: Loading RAM_FIFO/RAM_dct_preFFT_reod.qsys
+Progress: Reading input file
+Progress: Adding ram_2port_0 [ram_2port 15.1]
+Progress: Parameterizing module ram_2port_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+: RAM_dct_preFFT_reod.ram_2port_0: Targeting device family: Arria 10.
+: RAM_dct_preFFT_reod.ram_2port_0: 'q_a' output bus width will be ignored while using one read port and one write port mode.
+: RAM_dct_preFFT_reod.ram_2port_0: Tab Output2 is unavailable while using one read port and one write port.
+Info: RAM_dct_preFFT_reod: "Transforming system: RAM_dct_preFFT_reod"
+Info: RAM_dct_preFFT_reod: Running transform generation_view_transform
+Info: RAM_dct_preFFT_reod: Running transform generation_view_transform took 0.000s
+Info: ram_2port_0: Running transform generation_view_transform
+Info: ram_2port_0: Running transform generation_view_transform took 0.000s
+Info: RAM_dct_preFFT_reod: Running transform merlin_avalon_transform
+Info: RAM_dct_preFFT_reod: Running transform merlin_avalon_transform took 0.047s
+Info: RAM_dct_preFFT_reod: "Naming system components in system: RAM_dct_preFFT_reod"
+Info: RAM_dct_preFFT_reod: "Processing generation queue"
+Info: RAM_dct_preFFT_reod: "Generating: RAM_dct_preFFT_reod"
+Info: RAM_dct_preFFT_reod: "Generating: RAM_dct_preFFT_reod_ram_2port_151_nn5gxoa"
+Info: RAM_dct_preFFT_reod: Done "RAM_dct_preFFT_reod" with 2 modules, 2 files
+Info: qsys-generate succeeded.
+Info: Finished: Create simulation model
+Info: Starting: Create Modelsim Project.
+Info: sim-script-gen --spd=C:\work\pj104\code\1610\sim\dct\dct_fft\src\RAM_FIFO\RAM_dct_preFFT_reod\RAM_dct_preFFT_reod.spd --output-directory=C:/work/pj104/code/1610/sim/dct/dct_fft/src/RAM_FIFO/RAM_dct_preFFT_reod/sim/ --use-relative-paths=true
+Info: Doing: ip-make-simscript --spd=C:\work\pj104\code\1610\sim\dct\dct_fft\src\RAM_FIFO\RAM_dct_preFFT_reod\RAM_dct_preFFT_reod.spd --output-directory=C:/work/pj104/code/1610/sim/dct/dct_fft/src/RAM_FIFO/RAM_dct_preFFT_reod/sim/ --use-relative-paths=true
+Info: Generating the following file(s) for MODELSIM simulator in C:/work/pj104/code/1610/sim/dct/dct_fft/src/RAM_FIFO/RAM_dct_preFFT_reod/sim/ directory:
+Info: 	mentor/msim_setup.tcl
+Info: Generating the following file(s) for VCS simulator in C:/work/pj104/code/1610/sim/dct/dct_fft/src/RAM_FIFO/RAM_dct_preFFT_reod/sim/ directory:
+Info: 	synopsys/vcs/vcs_setup.sh
+Info: Generating the following file(s) for VCSMX simulator in C:/work/pj104/code/1610/sim/dct/dct_fft/src/RAM_FIFO/RAM_dct_preFFT_reod/sim/ directory:
+Info: 	synopsys/vcsmx/synopsys_sim.setup
+Info: 	synopsys/vcsmx/vcsmx_setup.sh
+Info: Generating the following file(s) for NCSIM simulator in C:/work/pj104/code/1610/sim/dct/dct_fft/src/RAM_FIFO/RAM_dct_preFFT_reod/sim/ directory:
+Info: 	cadence/cds.lib
+Info: 	cadence/hdl.var
+Info: 	cadence/ncsim_setup.sh
+Info: 	1 .cds.lib files in cadence/cds_libs/ directory
+Info: Generating the following file(s) for RIVIERA simulator in C:/work/pj104/code/1610/sim/dct/dct_fft/src/RAM_FIFO/RAM_dct_preFFT_reod/sim/ directory:
+Info: 	aldec/rivierapro_setup.tcl
+Info: For information on how to simulate your IP, see the explanatory comments in the simulator-specific subdirectories under C:/work/pj104/code/1610/sim/dct/dct_fft/src/RAM_FIFO/RAM_dct_preFFT_reod/sim/.
+Info: Finished: Create Modelsim Project.
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate C:\work\pj104\code\1610\sim\dct\dct_fft\src\RAM_FIFO\RAM_dct_preFFT_reod.qsys --synthesis=VERILOG --output-directory=C:\work\pj104\code\1610\sim\dct\dct_fft\src\RAM_FIFO\RAM_dct_preFFT_reod --family="Arria 10" --part=10AX115U3F45E2SGE3
+Progress: Loading RAM_FIFO/RAM_dct_preFFT_reod.qsys
+Progress: Reading input file
+Progress: Adding ram_2port_0 [ram_2port 15.1]
+Progress: Parameterizing module ram_2port_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+: RAM_dct_preFFT_reod.ram_2port_0: Targeting device family: Arria 10.
+: RAM_dct_preFFT_reod.ram_2port_0: 'q_a' output bus width will be ignored while using one read port and one write port mode.
+: RAM_dct_preFFT_reod.ram_2port_0: Tab Output2 is unavailable while using one read port and one write port.
+Info: RAM_dct_preFFT_reod: "Transforming system: RAM_dct_preFFT_reod"
+Info: RAM_dct_preFFT_reod: Running transform generation_view_transform
+Info: RAM_dct_preFFT_reod: Running transform generation_view_transform took 0.000s
+Info: ram_2port_0: Running transform generation_view_transform
+Info: ram_2port_0: Running transform generation_view_transform took 0.000s
+Info: RAM_dct_preFFT_reod: Running transform merlin_avalon_transform
+Info: RAM_dct_preFFT_reod: Running transform merlin_avalon_transform took 0.097s
+Info: RAM_dct_preFFT_reod: "Naming system components in system: RAM_dct_preFFT_reod"
+Info: RAM_dct_preFFT_reod: "Processing generation queue"
+Info: RAM_dct_preFFT_reod: "Generating: RAM_dct_preFFT_reod"
+Info: RAM_dct_preFFT_reod: "Generating: RAM_dct_preFFT_reod_ram_2port_151_nn5gxoa"
+Info: RAM_dct_preFFT_reod: Done "RAM_dct_preFFT_reod" with 2 modules, 3 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

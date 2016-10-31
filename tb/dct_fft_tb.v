@@ -26,17 +26,8 @@ module dct_fft_tb (
 	wire [1:0]  source_error; //       .source_error
 	wire        source_sop;   //       .source_sop
 	wire        source_eop;   //       .source_eop
-	wire [27:0] source_real;  //       .source_real
-	wire [27:0] source_imag;  //       .source_imag
-	wire [11:0] fftpts_out;    //       .fftpts_out
-
-	wire        source_valid_t0; // source.source_valid
-	wire        source_ready_t0; //       .source_ready
-	wire [1:0]  source_error_t0; //       .source_error
-	wire        source_sop_t0;   //       .source_sop
-	wire        source_eop_t0;   //       .source_eop
-	wire [27:0] source_real_t0;  //       .source_real
-	wire [27:0] source_imag_t0;  //       .source_imag
+	wire [15:0] source_real;  //       .source_real
+	wire [15:0] source_imag;  //       .source_imag
 
 	reg [15:0] cnt_rd;
 	integer 	data_file, scan_file, wr_file;
@@ -47,10 +38,10 @@ module dct_fft_tb (
 	initial	begin
 		rst_n = 0;
 		clk = 0;
-		//source_ready = 0;
+		source_ready = 0;
 
 		# 100 rst_n = 1'b1;
-		//source_ready = 1'b1;
+		source_ready = 1'b1;
 	end
 
 	initial begin
@@ -112,9 +103,9 @@ module dct_fft_tb (
 	end
 
 
-	dct_fft u0 (
+	dct_top u0 (
 		.clk          (clk),          //    clk.clk
-		.reset_n      (rst_n),      //    rst.reset_n
+		.rst_n_sync   (rst_n),      //    rst.reset_n
 		.sink_valid   (sink_valid),   //   sink.sink_valid
 		.sink_ready   (sink_ready),   //       .sink_ready
 		.sink_error   (sink_error),   //       .sink_error
@@ -123,48 +114,16 @@ module dct_fft_tb (
 		.sink_real    (sink_real),    //       .sink_real
 		.sink_imag    (sink_imag),    //       .sink_imag
 		.fftpts_in    (fftpts_in),    //       .fftpts_in
-		.inverse      (inverse),      //       .inverse
-		.source_valid (source_valid_t0), // source.source_valid
-		.source_ready (source_ready_t0), //       .source_ready
-		.source_error (source_error_t0), //       .source_error
-		.source_sop   (source_sop_t0),   //       .source_sop
-		.source_eop   (source_eop_t0),   //       .source_eop
-		.source_real  (source_real_t0),  //       .source_real
-		.source_imag  (source_imag_t0),  //       .source_imag
-		.fftpts_out   (fftpts_out)    //       .fftpts_out
-	);
 
-
-
-	dct_vecRot #(  
-		.wDataIn (28),  
-		.wDataOut (16)  
-	)
-	dct_vecRot_inst
-	(
-	// left side
-	.rst_n_sync (rst_n),  // clk synchronous reset active low
-	.clk (clk),    
-
-	.sink_valid (source_valid_t0), 
-	.sink_ready (source_ready_t0), 
-	.sink_error (source_error_t0), 
-	.sink_sop 	(source_sop_t0  ),   
-	.sink_eop 	(source_eop_t0  ),   
-	.sink_real 	(source_real_t0 ),  
-	.sink_imag 	(source_imag_t0 ),  
-
-	.fftpts_in (fftpts_in),    
-
-	//right side
-	.source_valid	(source_valid), 
-	.source_ready	(1'b1), 
-	.source_error	(source_error), 
-	.source_sop		(source_sop),   
-	.source_eop		(source_eop),   
-	.source_real	(source_real),  
-	.source_imag	(source_imag),  
-	.fftpts_out()
+		//right side
+		.source_valid	(source_valid), 
+		.source_ready	(source_ready), 
+		.source_error	(source_error), 
+		.source_sop		(source_sop),   
+		.source_eop		(source_eop),   
+		.source_real	(source_real),  
+		.source_imag	(source_imag),  
+		.fftpts_out()
 	);
 
 	reg signed [15:0] source_real_r, source_imag_r;

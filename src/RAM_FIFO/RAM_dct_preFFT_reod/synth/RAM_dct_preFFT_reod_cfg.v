@@ -1,0 +1,5 @@
+config RAM_dct_preFFT_reod_cfg;
+		design RAM_dct_preFFT_reod;
+		instance RAM_dct_preFFT_reod.ram_2port_0 use RAM_dct_preFFT_reod_ram_2port_151.RAM_dct_preFFT_reod_ram_2port_151_nn5gxoa;
+endconfig
+

@@ -1,0 +1,11 @@
+	component RAM_dct_preFFT_reod is
+		port (
+			data      : in  std_logic_vector(31 downto 0) := (others => 'X'); -- datain
+			wraddress : in  std_logic_vector(10 downto 0) := (others => 'X'); -- wraddress
+			rdaddress : in  std_logic_vector(10 downto 0) := (others => 'X'); -- rdaddress
+			wren      : in  std_logic                     := 'X';             -- wren
+			clock     : in  std_logic                     := 'X';             -- clock
+			q         : out std_logic_vector(31 downto 0)                     -- dataout
+		);
+	end component RAM_dct_preFFT_reod;
+
