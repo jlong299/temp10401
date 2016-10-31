@@ -111,7 +111,7 @@ assign source_error = 2'b00;
 
 dct_vecRot_ram #(
 	.wDataIn (wDataIn),  
-	.wDataOut (28)  
+	.wDataOutbla (28)  
 	)
 dct_vecRot_ram_inst (
 	// left side
@@ -197,6 +197,7 @@ dct_vecRot_coeff_inst (
 	.source_cos 	(coeff_cos ),  
 	.source_sin 	(coeff_sin )
 	);
+
 
 dct_vecRot_scaling #(
 	.wDataIn (wDataOut_t1),  

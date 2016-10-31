@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 15.1 185 win32 2016.10.26.16:56:43
+# ACDS 15.1 185 win32 2016.10.28.13:41:00
 
 # ----------------------------------------
 # vcsmx - auto-generated simulation script
@@ -59,7 +59,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 15.1 185 win32 2016.10.26.16:56:43
+# ACDS 15.1 185 win32 2016.10.28.13:41:00
 # ----------------------------------------
 # initialize variables
 TOP_LEVEL_NAME="ROM_cos_dct_vecRot"
@@ -131,7 +131,7 @@ fi
 # ----------------------------------------
 # compile design files in correct order
 if [ $SKIP_COM -eq 0 ]; then
-  vlogan +v2k $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/../rom_1port_151/sim/ROM_cos_dct_vecRot_rom_1port_151_yg5vrxq.v" -work ROM_cos_dct_vecRot_rom_1port_151
+  vlogan +v2k $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/../rom_1port_151/sim/ROM_cos_dct_vecRot_rom_1port_151_gip373i.v" -work ROM_cos_dct_vecRot_rom_1port_151
   vlogan +v2k $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ROM_cos_dct_vecRot.v"                                                                                  
 fi
 

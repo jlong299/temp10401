@@ -5,11 +5,11 @@
  version="1.0"
  fabric="QSYS">
  <!-- Format version 15.1 185 (Future versions may contain additional information.) -->
- <!-- 2016.10.26.16:56:44 -->
+ <!-- 2016.10.28.13:41:00 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1477472204</value>
+  <value>1477633260</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -243,7 +243,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="GUI_MIFfilename">
    <type>java.lang.String</type>
-   <value>coeff_cos_dct_vecRot.mif</value>
+   <value>C:/work/pj104/code/1610/sim/dct/dct_fft/src/RAM_FIFO/coeff_cos_dct_vecRot.mif</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>

@@ -5,4 +5,4 @@ set_global_assignment -library "lib_ROM_sin_dct_vecRot" -name SPD_FILE [file joi
 set_global_assignment -library "lib_ROM_sin_dct_vecRot" -name MISC_FILE [file join $::quartus(sip_path) "../ROM_sin_dct_vecRot.qsys"]
 
 set_global_assignment -library "lib_ROM_sin_dct_vecRot" -name MISC_FILE [file join $::quartus(sip_path) "sim/ROM_sin_dct_vecRot.v"]
-set_global_assignment -library "lib_ROM_sin_dct_vecRot" -name MISC_FILE [file join $::quartus(sip_path) "rom_1port_151/sim/ROM_sin_dct_vecRot_rom_1port_151_cxpskji.v"]
+set_global_assignment -library "lib_ROM_sin_dct_vecRot" -name MISC_FILE [file join $::quartus(sip_path) "rom_1port_151/sim/ROM_sin_dct_vecRot_rom_1port_151_xhfa2qa.v"]

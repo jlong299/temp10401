@@ -9,7 +9,7 @@ module ROM_cos_dct_vecRot (
 		output wire [17:0] q        // rom_output.dataout
 	);
 
-	ROM_cos_dct_vecRot_rom_1port_151_yg5vrxq rom_1port_0 (
+	ROM_cos_dct_vecRot_rom_1port_151_gip373i rom_1port_0 (
 		.address (address), //  rom_input.address
 		.clock   (clock),   //           .clk
 		.q       (q)        // rom_output.dataout

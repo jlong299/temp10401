@@ -9,7 +9,7 @@ module ROM_sin_dct_vecRot (
 		output wire [17:0] q        // rom_output.dataout
 	);
 
-	ROM_sin_dct_vecRot_rom_1port_151_cxpskji rom_1port_0 (
+	ROM_sin_dct_vecRot_rom_1port_151_xhfa2qa rom_1port_0 (
 		.address (address), //  rom_input.address
 		.clock   (clock),   //           .clk
 		.q       (q)        // rom_output.dataout

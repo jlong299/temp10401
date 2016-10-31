@@ -31,7 +31,7 @@
 
 module dct_vecRot_ram #(parameter  
 		wDataIn = 28,  
-		wDataOut =28  
+		wDataOutbla =28  
 	)
 	(
 	// left side
@@ -54,17 +54,18 @@ module dct_vecRot_ram #(parameter
 	output wire [1:0]  source_error, //       .source_error
 	output reg        source_sop,   //       .source_sop
 	output reg        source_eop,   //       .source_eop
-	output reg [wDataOut-1:0] source_real,  //       .source_real
-	output reg [wDataOut-1:0] source_imag,  //       .source_imag
-	output reg [wDataOut-1:0] source_real_rev,  //       .source_real
-	output reg [wDataOut-1:0] source_imag_rev,  //       .source_imag
+	output reg [wDataOutbla-1:0] source_real,  //       .source_real
+	output reg [wDataOutbla-1:0] source_imag,  //       .source_imag
+	output reg [wDataOutbla-1:0] source_real_rev,  //       .source_real
+	output reg [wDataOutbla-1:0] source_imag_rev,  //       .source_imag
 	output wire [11:0] fftpts_out    //       .fftpts_out
 	);
 
 wire [11:0] 	fftpts_divd2;
 reg 	wren0, wren1;
 reg	 [9:0]	wraddress0, rdaddress0, wraddress1, rdaddress1;	//constant width
-wire [2*wDataOut -1:0]  	q0, q1;
+ wire [2*wDataOutbla -1:0]  	q0, q1;
+//wire [55:0]  	q0, q1;
 reg [1:0] 	fsm;
 wire [2*wDataIn-1:0] 	data;
 reg [11:0] 		cnt_sink_valid;
@@ -255,31 +256,31 @@ begin
 
 		if (read_latter_half==1'b0 && rdaddress0==1'd1)
 		begin
-			source_real <= q0[2*wDataOut-1:wDataOut];
-			source_imag <= q0[wDataOut-1:0];
-			source_real_rev <= q0[2*wDataOut-1:wDataOut];
-			source_imag_rev <= q0[wDataOut-1:0];
+			source_real <= q0[2*wDataOutbla-1:wDataOutbla];
+			source_imag <= q0[wDataOutbla-1:0];
+			source_real_rev <= q0[2*wDataOutbla-1:wDataOutbla];
+			source_imag_rev <= q0[wDataOutbla-1:0];
 		end
 		else if (read_latter_half==1'b1 && rdaddress0==(fftpts_divd2-1'd1))
 		begin
-			source_real <= q1[2*wDataOut-1:wDataOut];
-			source_imag <= q1[wDataOut-1:0];
-			source_real_rev <= q1[2*wDataOut-1:wDataOut];
-			source_imag_rev <= q1[wDataOut-1:0];
+			source_real <= q1[2*wDataOutbla-1:wDataOutbla];
+			source_imag <= q1[wDataOutbla-1:0];
+			source_real_rev <= q1[2*wDataOutbla-1:wDataOutbla];
+			source_imag_rev <= q1[wDataOutbla-1:0];
 		end
 		else if (read_latter_half_r == 1'b0)
 		begin
-			source_real <= q0[2*wDataOut-1:wDataOut];
-			source_imag <= q0[wDataOut-1:0];
-			source_real_rev <= q1[2*wDataOut-1:wDataOut];
-			source_imag_rev <= q1[wDataOut-1:0];
+			source_real <= q0[2*wDataOutbla-1:wDataOutbla];
+			source_imag <= q0[wDataOutbla-1:0];
+			source_real_rev <= q1[2*wDataOutbla-1:wDataOutbla];
+			source_imag_rev <= q1[wDataOutbla-1:0];
 		end
 		else
 		begin
-			source_real <= q1[2*wDataOut-1:wDataOut];
-			source_imag <= q1[wDataOut-1:0];
-			source_real_rev <= q0[2*wDataOut-1:wDataOut];
-			source_imag_rev <= q0[wDataOut-1:0];		
+			source_real <= q1[2*wDataOutbla-1:wDataOutbla];
+			source_imag <= q1[wDataOutbla-1:0];
+			source_real_rev <= q0[2*wDataOutbla-1:wDataOutbla];
+			source_imag_rev <= q0[wDataOutbla-1:0];		
 		end
 		end
 	end

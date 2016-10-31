@@ -1,10 +1,10 @@
 complex_sig = 1;
 
-x=1:2048;
+x=round((2*rand(1,2048)-1)*8192);
 if complex_sig == 1
 x=x*(1+1j);
 end
-%disp(x);
+%disp(x); 
 
 N=length(x);
 D0 = dct_t(x);
@@ -16,6 +16,12 @@ D0 = dct_t(x);
 x_reod = zeros(1,N);
 x_reod(1:N/2) = x(1:2:N-1);
 x_reod(N/2+1:N) = x(N:-2:2);
+
+srcf = fopen('../sim/mentor/dct_src.dat','w');
+for k = 1 :N
+    fprintf(srcf , '%d %d\n' , real(x_reod(k)), imag(x_reod(k)));
+end
+fclose(srcf);
 
     F = fft(x_reod);
     %disp(F);
@@ -53,5 +59,9 @@ x1(1:2:N-1) = x1_reod(1:N/2);
 x1(2:2:N) = x1_reod(N:-1:N/2+1);
 %disp(x1);
 
+%% Compare with FPGA simulation result
+outf = fopen('../sim/mentor/dct_result.dat','r');
+    FPGA_out = fscanf(outf , '%d %d', [2 Inf]);
+fclose(outf);
 
-    
+max(abs(FPGA_out(1,:) - real(D1)))   

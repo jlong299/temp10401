@@ -22,7 +22,7 @@ module dct_fft_tb (
 	reg [0:0]  inverse;      //       .inverse
 
 	wire        source_valid; // source.source_valid
-	reg        source_ready; //       .source_ready
+	reg         source_ready; //       .source_ready
 	wire [1:0]  source_error; //       .source_error
 	wire        source_sop;   //       .source_sop
 	wire        source_eop;   //       .source_eop
@@ -30,11 +30,19 @@ module dct_fft_tb (
 	wire [27:0] source_imag;  //       .source_imag
 	wire [11:0] fftpts_out;    //       .fftpts_out
 
+	wire        source_valid_t0; // source.source_valid
+	wire        source_ready_t0; //       .source_ready
+	wire [1:0]  source_error_t0; //       .source_error
+	wire        source_sop_t0;   //       .source_sop
+	wire        source_eop_t0;   //       .source_eop
+	wire [27:0] source_real_t0;  //       .source_real
+	wire [27:0] source_imag_t0;  //       .source_imag
+
 	reg [15:0] cnt_rd;
 	integer 	data_file, scan_file, wr_file;
 	reg [31:0] 	captured_data, captured_data_imag;
-	localparam reg [15:0] cnt_rd_end = 16'd8;
-	localparam reg [11:0] fftpts_cnst = 12'd8;
+	localparam reg [15:0] cnt_rd_end = 16'd2048;
+	localparam reg [11:0] fftpts_cnst = 12'd2048;
 
 	initial	begin
 		rst_n = 0;
@@ -46,12 +54,12 @@ module dct_fft_tb (
 	end
 
 	initial begin
-		data_file = $fopen("fft_src.dat","r");
+		data_file = $fopen("dct_src.dat","r");
 		if (data_file == 0) begin
 			$display("fft_src handle was NULL");
 			$finish;
 		end
-		wr_file = $fopen("fft_result.dat","w");
+		wr_file = $fopen("dct_result.dat","w");
 		if (wr_file == 0) begin
 			$display("fft_result handle was NULL");
 			$finish;
@@ -116,17 +124,50 @@ module dct_fft_tb (
 		.sink_imag    (sink_imag),    //       .sink_imag
 		.fftpts_in    (fftpts_in),    //       .fftpts_in
 		.inverse      (inverse),      //       .inverse
-		.source_valid (source_valid), // source.source_valid
-		.source_ready (source_ready), //       .source_ready
-		.source_error (source_error), //       .source_error
-		.source_sop   (source_sop),   //       .source_sop
-		.source_eop   (source_eop),   //       .source_eop
-		.source_real  (source_real),  //       .source_real
-		.source_imag  (source_imag),  //       .source_imag
+		.source_valid (source_valid_t0), // source.source_valid
+		.source_ready (source_ready_t0), //       .source_ready
+		.source_error (source_error_t0), //       .source_error
+		.source_sop   (source_sop_t0),   //       .source_sop
+		.source_eop   (source_eop_t0),   //       .source_eop
+		.source_real  (source_real_t0),  //       .source_real
+		.source_imag  (source_imag_t0),  //       .source_imag
 		.fftpts_out   (fftpts_out)    //       .fftpts_out
 	);
 
-	reg signed [27:0] source_real_r, source_imag_r;
+
+
+	dct_vecRot #(  
+		.wDataIn (28),  
+		.wDataOut (16)  
+	)
+	dct_vecRot_inst
+	(
+	// left side
+	.rst_n_sync (rst_n),  // clk synchronous reset active low
+	.clk (clk),    
+
+	.sink_valid (source_valid_t0), 
+	.sink_ready (source_ready_t0), 
+	.sink_error (source_error_t0), 
+	.sink_sop 	(source_sop_t0  ),   
+	.sink_eop 	(source_eop_t0  ),   
+	.sink_real 	(source_real_t0 ),  
+	.sink_imag 	(source_imag_t0 ),  
+
+	.fftpts_in (fftpts_in),    
+
+	//right side
+	.source_valid	(source_valid), 
+	.source_ready	(1'b1), 
+	.source_error	(source_error), 
+	.source_sop		(source_sop),   
+	.source_eop		(source_eop),   
+	.source_real	(source_real),  
+	.source_imag	(source_imag),  
+	.fftpts_out()
+	);
+
+	reg signed [15:0] source_real_r, source_imag_r;
 	assign source_real_r = source_real;
 	assign source_imag_r = source_imag;
 
@@ -139,37 +180,6 @@ module dct_fft_tb (
 			end
 			if (source_eop)  $fclose(wr_file);
 	end
-
-	dct_vecRot #(  
-		.wDataIn (28),  
-		.wDataOut (16)  
-	)
-	dct_vecRot_inst
-	(
-	// left side
-	.rst_n_sync (rst_n),  // clk synchronous reset active low
-	.clk (clk),    
-
-	.sink_valid (source_valid), 
-	.sink_ready (source_ready), 
-	.sink_error (source_error), 
-	.sink_sop 	(source_sop  ),   
-	.sink_eop 	(source_eop  ),   
-	.sink_real 	(source_real ),  
-	.sink_imag 	(source_imag ),  
-
-	.fftpts_in (fftpts_out),    
-
-	//right side
-	.source_valid	(), 
-	.source_ready	(1'b1), 
-	.source_error	(), 
-	.source_sop		(),   
-	.source_eop		(),   
-	.source_real	(),  
-	.source_imag	(),  
-	.fftpts_out()
-	);
 
 
 

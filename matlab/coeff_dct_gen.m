@@ -12,9 +12,9 @@ w(1) = 1/sqrt(N);
 %     end
 
 coeff_numerator = zeros(1,N);
-coeff_numerator(1) = 1;
+coeff_numerator(1) = 1/sqrt(2);
 for k = 2 : N
-    coeff_numerator(k) = sqrt(2)*(cos(pi*(k-1)/2/N) + 1j*sin(pi*(k-1)/2/N));
+    coeff_numerator(k) = (cos(pi*(k-1)/2/N) + 1j*sin(pi*(k-1)/2/N));
 end
 
 % outf = fopen('../src/RAM_FIFO/coeff_dct_fft_hex.dat','w');

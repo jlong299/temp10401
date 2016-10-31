@@ -27,7 +27,7 @@
 //          65536*sqrt(2)*(sin(pi*(k-1)/2/N)    k=2:N
 //  --------------------------------------------------------------------------------------------------
 //  Twiddle :
-//                           +    *sink_cos      +           /2/65536/sqrt(N)
+//                           +    *sink_cos      +           /2/65536/sqrt(N/2)
 //  R(F(k))     ---------------- -----------> ------- Real ------------------>
 //  sink_real    \          + /                  + /       
 //                \          /                    /      
@@ -41,7 +41,7 @@
 //                \ /     \ /   
 //                 / \     / \  
 //                /   \   /   \ -
-//               /     \ /   + \  *sink_sin       +          /2/65536/sqrt(N)
+//               /     \ /   + \  *sink_sin       +          /2/65536/sqrt(N/2)
 //  R(F(N+2-k)) ---------------- -----------> ------- Imag ------------------> 
 //  sink_real_rev     /  \                       + /            
 //                   /    \                       /           
@@ -70,16 +70,15 @@ module dct_vecRot_twiddle #(parameter
 	input wire [1:0]  	sink_error, //       .sink_error
 	input wire        	sink_sop,   //       .sink_sop
 	input wire        	sink_eop,   //       .sink_eop
-	input wire [wDataIn-1:0] sink_real,  //       .sink_real
-	input wire [wDataIn-1:0] sink_imag,  //       .sink_imag
-	input wire [wDataIn-1:0] sink_real_rev,  //       .sink_real
-	input wire [wDataIn-1:0] sink_imag_rev,  //       .sink_imag
-
+	input wire signed [wDataIn-1:0] sink_real,  //       .sink_real
+	input wire signed [wDataIn-1:0] sink_imag,  //       .sink_imag
+	input wire signed [wDataIn-1:0] sink_real_rev,  //       .sink_real
+	input wire signed [wDataIn-1:0] sink_imag_rev,  //       .sink_imag
 	input wire [11:0] fftpts_in,    //       .fftpts_in
 
 	// 1 clks delay with sink_valid
-	input wire [wCoeff-1:0] 	sink_cos,
-	input wire [wCoeff-1:0] 	sink_sin,
+	input wire signed [wCoeff-1:0] 	sink_cos,
+	input wire signed [wCoeff-1:0] 	sink_sin,
 
 	//right side
 	output reg         	source_valid, // source.source_valid
@@ -94,11 +93,11 @@ module dct_vecRot_twiddle #(parameter
 
 assign 	source_error = 2'b00;
 assign  fftpts_out = fftpts_in;
-assign 	source_ready = sink_ready;
+assign 	sink_ready = source_ready;
 
 reg signed [wDataIn:0] 	p1 [3:0];
 reg signed [wDataIn+wCoeff:0] 	p2 [3:0];
-reg  [wDataIn+wCoeff+1:0] 	p3 [3:0];
+reg signed [wDataIn+wCoeff+1:0] 	p3 [1:0];
 
 reg [2:0] 	valid_r, sop_r, eop_r;
 
@@ -168,43 +167,43 @@ begin
 		case (fftpts_in)
 		12'd2048:
 		begin
-			source_real <= p3[0][wDataIn+wCoeff-2:23]+p3[0][22]; //rounding
-			source_imag <= p3[1][wDataIn+wCoeff-2:23]+p3[1][22]; //rounding
+			source_real <= p3[0][wDataIn+wCoeff-3:22]+p3[0][21]; //rounding
+			source_imag <= p3[1][wDataIn+wCoeff-3:22]+p3[1][21]; //rounding
 		end
 		12'd1024:
 		begin
-			source_real <= p3[0][wDataIn+wCoeff-3:22]+p3[0][21]; //rounding
-			source_imag <= p3[1][wDataIn+wCoeff-3:22]+p3[1][21]; //rounding
+			source_real <= p3[0][wDataIn+wCoeff-4:21]+p3[0][20]; //rounding
+			source_imag <= p3[1][wDataIn+wCoeff-4:21]+p3[1][20]; //rounding
 		end
 		12'd512:
 		begin
-			source_real <= p3[0][wDataIn+wCoeff-3:22]+p3[0][21]; //rounding
-			source_imag <= p3[1][wDataIn+wCoeff-3:22]+p3[1][21]; //rounding
+			source_real <= p3[0][wDataIn+wCoeff-4:21]+p3[0][20]; //rounding
+			source_imag <= p3[1][wDataIn+wCoeff-4:21]+p3[1][20]; //rounding
 		end
 		12'd256:
 		begin
-			source_real <= p3[0][wDataIn+wCoeff-4:21]+p3[0][20]; //rounding
-			source_imag <= p3[1][wDataIn+wCoeff-4:21]+p3[1][20]; //rounding
+			source_real <= p3[0][wDataIn+wCoeff-5:20]+p3[0][19]; //rounding
+			source_imag <= p3[1][wDataIn+wCoeff-5:20]+p3[1][19]; //rounding
 		end
 		12'd128:
 		begin
-			source_real <= p3[0][wDataIn+wCoeff-4:21]+p3[0][20]; //rounding
-			source_imag <= p3[1][wDataIn+wCoeff-4:21]+p3[1][20]; //rounding
+			source_real <= p3[0][wDataIn+wCoeff-5:20]+p3[0][19]; //rounding
+			source_imag <= p3[1][wDataIn+wCoeff-5:20]+p3[1][19]; //rounding
 		end
 		12'd64:
 		begin
-			source_real <= p3[0][wDataIn+wCoeff-5:20]+p3[0][19]; //rounding
-			source_imag <= p3[1][wDataIn+wCoeff-5:20]+p3[1][19]; //rounding
+			source_real <= p3[0][wDataIn+wCoeff-6:19]+p3[0][18]; //rounding
+			source_imag <= p3[1][wDataIn+wCoeff-6:19]+p3[1][18]; //rounding
 		end
 		12'd32:
 		begin
-			source_real <= p3[0][wDataIn+wCoeff-5:20]+p3[0][19]; //rounding
-			source_imag <= p3[1][wDataIn+wCoeff-5:20]+p3[1][19]; //rounding
+			source_real <= p3[0][wDataIn+wCoeff-6:19]+p3[0][18]; //rounding
+			source_imag <= p3[1][wDataIn+wCoeff-6:19]+p3[1][18]; //rounding
 		end
 		default:
 		begin
-			source_real <= p3[0][wDataIn+wCoeff-2:23]+p3[0][22]; //rounding
-			source_imag <= p3[1][wDataIn+wCoeff-2:23]+p3[1][22]; //rounding
+			source_real <= p3[0][wDataIn+wCoeff-3:22]+p3[0][21]; //rounding
+			source_imag <= p3[1][wDataIn+wCoeff-3:22]+p3[1][21]; //rounding
 		end
 		endcase
 	end

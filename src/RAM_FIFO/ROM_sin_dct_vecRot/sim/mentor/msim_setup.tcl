@@ -54,7 +54,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 15.1 185 win32 2016.10.26.17:20:23
+# ACDS 15.1 185 win32 2016.10.28.13:45:13
 
 # ----------------------------------------
 # Initialize variables
@@ -148,7 +148,7 @@ alias dev_com {
 # Compile the design files in correct order
 alias com {
   echo "\[exec\] com"
-  eval  vlog $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/../rom_1port_151/sim/ROM_sin_dct_vecRot_rom_1port_151_cxpskji.v" -work ROM_sin_dct_vecRot_rom_1port_151
+  eval  vlog $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/../rom_1port_151/sim/ROM_sin_dct_vecRot_rom_1port_151_xhfa2qa.v" -work ROM_sin_dct_vecRot_rom_1port_151
   eval  vlog $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ROM_sin_dct_vecRot.v"                                                                                  
 }
 

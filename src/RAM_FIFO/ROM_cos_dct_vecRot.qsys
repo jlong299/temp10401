@@ -6,7 +6,7 @@
    version="1.0"
    description=""
    tags="INTERNAL_COMPONENT=true"
-   categories="" />
+   categories="System" />
  <parameter name="bonusData"><![CDATA[bonusData 
 {
    element rom_1port_0
@@ -72,7 +72,7 @@
   <parameter name="GUI_JTAG_ENABLED" value="false" />
   <parameter name="GUI_JTAG_ID" value="NONE" />
   <parameter name="GUI_MAXIMUM_DEPTH" value="0" />
-  <parameter name="GUI_MIFfilename">coeff_cos_dct_vecRot.mif</parameter>
+  <parameter name="GUI_MIFfilename">C:/work/pj104/code/1610/sim/dct/dct_fft/src/RAM_FIFO/coeff_cos_dct_vecRot.mif</parameter>
   <parameter name="GUI_NUMWORDS_A" value="2048" />
   <parameter name="GUI_RAM_BLOCK_TYPE" value="Auto" />
   <parameter name="GUI_RegAddr" value="true" />
