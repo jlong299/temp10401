@@ -81,7 +81,8 @@ module dct_fft_tb (
 			inverse <= 0;
 			fftpts_in <= fftpts_cnst;
 
-			cnt_rd <= (cnt_rd == cnt_rd_end+16'd1) ? cnt_rd : cnt_rd+16'd1;
+			//cnt_rd <= (cnt_rd == cnt_rd_end+16'd1) ? cnt_rd : cnt_rd+16'd1;
+			cnt_rd <= (cnt_rd == cnt_rd_end+16'd2400) ? 16'd0 : cnt_rd+16'd1;
 
 			if (cnt_rd >= 16'd1 && cnt_rd <= cnt_rd_end) begin
 				if (!$feof(data_file)) begin

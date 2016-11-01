@@ -47,7 +47,7 @@ add wave sim:/dct_fft_tb/u0/*
 #add wave sim:/dct_fft_tb/u0/dct_preFFT_reod_inst/*
 view structure
 view signals
-run 100us
+run 200us
 # Report success to the shell
 # exit -code 0
 # End of template
