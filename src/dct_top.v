@@ -125,20 +125,20 @@ dct_preFFT_reod_inst (
 dct_fft u0 (
 	.clk          (clk),          //    clk.clk
 	.reset_n      (rst_n_sync),      //    rst.reset_n
-	// .sink_valid   (sink_valid),   //   sink.sink_valid
-	// .sink_ready   (sink_ready),   //       .sink_ready
-	// .sink_error   (sink_error),   //       .sink_error
-	// .sink_sop     (sink_sop),     //       .sink_sop
-	// .sink_eop     (sink_eop),     //       .sink_eop
-	// .sink_real    (sink_real),    //       .sink_real
-	// .sink_imag    (sink_imag),    //       .sink_imag
-	.sink_valid   (source_valid_t0),   //   sink.sink_valid
-	.sink_ready   (source_ready_t0),   //       .sink_ready
-	.sink_error   (source_error_t0),   //       .sink_error
-	.sink_sop     (source_sop_t0),     //       .sink_sop
-	.sink_eop     (source_eop_t0),     //       .sink_eop
-	.sink_real    (source_real_t0),    //       .sink_real
-	.sink_imag    (source_imag_t0),    //       .sink_imag
+	.sink_valid   (sink_valid),   //   sink.sink_valid
+	.sink_ready   (sink_ready),   //       .sink_ready
+	.sink_error   (sink_error),   //       .sink_error
+	.sink_sop     (sink_sop),     //       .sink_sop
+	.sink_eop     (sink_eop),     //       .sink_eop
+	.sink_real    (sink_real),    //       .sink_real
+	.sink_imag    (sink_imag),    //       .sink_imag
+	// .sink_valid   (source_valid_t0),   //   sink.sink_valid
+	// .sink_ready   (source_ready_t0),   //       .sink_ready
+	// .sink_error   (source_error_t0),   //       .sink_error
+	// .sink_sop     (source_sop_t0),     //       .sink_sop
+	// .sink_eop     (source_eop_t0),     //       .sink_eop
+	// .sink_real    (source_real_t0),    //       .sink_real
+	// .sink_imag    (source_imag_t0),    //       .sink_imag
 	.fftpts_in    (fftpts_in),    //       .fftpts_in
 	.inverse      (1'b0),      //       .inverse
 	.source_valid (source_valid_t1), // source.source_valid
