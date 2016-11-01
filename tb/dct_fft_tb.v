@@ -34,14 +34,18 @@ module dct_fft_tb (
 	reg [31:0] 	captured_data, captured_data_imag;
 	localparam reg [15:0] cnt_rd_end = 16'd2048;
 	localparam reg [11:0] fftpts_cnst = 12'd2048;
+	reg rst_n_dly;
 
 	initial	begin
 		rst_n = 0;
 		clk = 0;
 		source_ready = 0;
+		rst_n_dly = 0;
 
 		# 100 rst_n = 1'b1;
 		source_ready = 1'b1;
+
+		# 500 rst_n_dly = 1'b1;
 	end
 
 	initial begin
@@ -61,7 +65,7 @@ module dct_fft_tb (
 
 	always@(posedge clk)
 	begin
-		if (!rst_n)
+		if (!rst_n_dly)
 		begin
 			sink_valid <= 0;
 			sink_real <= 0;
@@ -82,7 +86,7 @@ module dct_fft_tb (
 			fftpts_in <= fftpts_cnst;
 
 			//cnt_rd <= (cnt_rd == cnt_rd_end+16'd1) ? cnt_rd : cnt_rd+16'd1;
-			cnt_rd <= (cnt_rd == cnt_rd_end+16'd2200) ? 16'd0 : cnt_rd+16'd1;
+			cnt_rd <= (cnt_rd == cnt_rd_end+16'd50) ? 16'd0 : cnt_rd+16'd1;
 
 			if (cnt_rd >= 16'd1 && cnt_rd <= cnt_rd_end) begin
 				if (!$feof(data_file)) begin
