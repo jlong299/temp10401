@@ -25,7 +25,7 @@ module dct_fft (
 		output wire [11:0] fftpts_out    //       .fftpts_out
 	);
 
-	dct_fft_altera_fft_ii_151_lnky34i fft_ii_0 (
+	dct_fft_altera_fft_ii_151_gocahoy fft_ii_0 (
 		.clk          (clk),          //    clk.clk
 		.reset_n      (reset_n),      //    rst.reset_n
 		.sink_valid   (sink_valid),   //   sink.sink_valid

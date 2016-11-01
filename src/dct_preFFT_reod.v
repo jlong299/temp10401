@@ -77,6 +77,9 @@ wire wren;
 wire [2*wDataInOut-1:0] 	data, q;
 reg  read_latter_half;
 
+reg [10:0] 	rdaddress_demap, rdaddress_rev;
+wire [10:0] rdaddress_rev_demap;
+
 assign fftpts_out = fftpts_in;
 assign source_error = 2'b00;
 assign data = {sink_real, sink_imag};
@@ -84,12 +87,47 @@ assign source_real = q[2*wDataInOut-1:wDataInOut];
 assign source_imag = q[wDataInOut-1:0];
 assign wren = sink_valid;
 
+//----------  bit reversed (rdaddress is reordered data) -------------------------
+
+// rdaddress :  0,2,4,...,2046, 2047,2045,2043,...,3,1
+// rdaddress_demap : 0,1,2,3,...,2047
+always@(*)
+begin
+	if (rdaddress[0]==1'b0)
+		rdaddress_demap = rdaddress[10:1];
+	else
+		rdaddress_demap = 11'd2047 - rdaddress[10:1];
+end
+
+// rdaddress_rev_demap : 0, 1024, 512, ....
+assign rdaddress_rev_demap[0] = rdaddress_demap[10];
+assign rdaddress_rev_demap[1] = rdaddress_demap[9];
+assign rdaddress_rev_demap[2] = rdaddress_demap[8];
+assign rdaddress_rev_demap[3] = rdaddress_demap[7];
+assign rdaddress_rev_demap[4] = rdaddress_demap[6];
+assign rdaddress_rev_demap[5] = rdaddress_demap[5];
+assign rdaddress_rev_demap[6] = rdaddress_demap[4];
+assign rdaddress_rev_demap[7] = rdaddress_demap[3];
+assign rdaddress_rev_demap[8] = rdaddress_demap[2];
+assign rdaddress_rev_demap[9] = rdaddress_demap[1];
+assign rdaddress_rev_demap[10] = rdaddress_demap[0];
+
+// rdaddress_rev : 0, 2047, ...
+always@(*)
+begin
+	if (rdaddress_rev_demap < 11'd1024)
+		rdaddress_rev = {rdaddress_rev_demap[9:0], 1'b0};
+	else
+		rdaddress_rev = {(10'd1023 - rdaddress_rev_demap[9:0]), 1'b1};
+end
+//---------------------------------------------------
+
 //--------------  RAM ----------------- 
 // depth: 2048  datawidth: 2*wDataInOut  
 RAM_dct_preFFT_reod u0 (
 	.data      (data),      //  ram_input.datain
 	.wraddress (wraddress), //           .wraddress
-	.rdaddress (rdaddress), //           .rdaddress
+	.rdaddress (rdaddress_rev), //           .rdaddress
 	.wren      (wren),      //           .wren
 	.clock     (clk),     //           .clock
 	.q         (q)          // ram_output.dataout
@@ -106,7 +144,8 @@ begin
 		2'd0:
 			fsm <= (sink_sop)? 2'd1 : 2'd0;
 		2'd1: //write half data (ready to read)
-			fsm <= (wraddress == fftpts_out[11:1])? 2'd2 : 2'd1;
+			fsm <= (wraddress == fftpts_out - 1'd1)? 2'd2 : 2'd1;
+			// fsm <= (wraddress == fftpts_out[11:1])? 2'd2 : 2'd1;
 		2'd2:
 			fsm <= (source_ready) ? 2'd3 : 2'd2;
 		2'd3: // begin to read
